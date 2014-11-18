@@ -9,8 +9,10 @@
     
     <meta name="author" content="Peng Chen">
     
-    <meta name="description" content="MATLAB 语言支持
-完善你的编辑器">
+    <meta name="description" content="前言
+由于 VIM 的强大特性，使其可以适用于各种程序语言的书写，本文将设置 VIM 的配置，使其能够更好的支持 MATLAB 语言。
+设置 Ctags 的 MATLAB 支持
+Ctags 插件的安装过程请移步上一篇博客， Ctags 可以支持简单的 MATLAB 代码的书写，但是最新的 MATLA">
     
     
     
@@ -71,14 +73,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/11/18/0003_MATLAB_VIM_3/" title="使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持" itemprop="url">使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持</a>
+      <a href="/2014/11/18/2014_11_18_03_MATLAB_VIM_3/" title="使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持" itemprop="url">使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://www.chenpengdsp.com/about" title="Peng Chen" target="_blank" itemprop="author">Peng Chen</a>
 		
   <p class="article-time">
-    <time datetime="2014-11-18T09:17:30.000Z" itemprop="datePublished"> 发表于 2014-11-18</time>
+    <time datetime="2014-11-18T15:48:35.000Z" itemprop="datePublished"> 发表于 2014-11-18</time>
     
   </p>
 </header>
@@ -88,7 +90,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB_语言支持"><span class="toc-number">1.</span> <span class="toc-text">MATLAB 语言支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完善你的编辑器"><span class="toc-number">2.</span> <span class="toc-text">完善你的编辑器</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置_Ctags_的_MATLAB_支持"><span class="toc-number">2.</span> <span class="toc-text">设置 Ctags 的 MATLAB 支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置_Snippet_的_MATLAB_支持"><span class="toc-number">3.</span> <span class="toc-text">设置 Snippet 的 MATLAB 支持</span></a></li></ol>
 		
 		</div>
 		
@@ -96,8 +98,98 @@
 
 <!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
 
-<h2 id="MATLAB_语言支持">MATLAB 语言支持</h2>
-<h2 id="完善你的编辑器">完善你的编辑器</h2>
+<h2 id="前言">前言</h2>
+<p>由于 VIM 的强大特性，使其可以适用于各种程序语言的书写，本文将设置 VIM 的配置，使其能够更好的支持 MATLAB 语言。</p>
+<h2 id="设置_Ctags_的_MATLAB_支持">设置 Ctags 的 MATLAB 支持</h2>
+<p>Ctags 插件的安装过程请移步上一篇博客， Ctags 可以支持简单的 MATLAB 代码的书写，但是最新的 MATLAB 版本已经支持了面向对象的编程方法，即类（class），Ctags 插件并不能很好的胜任面向对象的 MATLAB 函数间的跳转，所以我对 Ctags 插件进行了配置，并自定义了 MATLAB 语言的标签（tags）搜索方式。将以下代码复制到 VIM 的配置文件_vimrc中即可</p>
+<pre><code>" 设置matlab语言的ctags
+autocmd FileType matlab map &lt;F8&gt; :!Ctags --langdef=matlab --langmap=matlab.m --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*<span class="command">\\</span><span class="special">[</span>.*<span class="command">\\</span><span class="special">]</span><span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*=<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)/\1/f,function/" --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*=<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)/\1/f,function/" --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)<span class="special">[</span>^=<span class="special">]</span>*<span class="formula">$/\1/f,function/" --regex-matlab="/^.*<span class="command">\s*</span>function<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span>=<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\(</span>.*$</span>/\2/f,function/" --regex-matlab="/^.*<span class="command">\s*</span>function<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\(</span>.*<span class="formula">$/\1/f,function/" --languages=matlab --extra=+q --excmd=pattern -R .&lt;CR&gt;:call EditTagFile()&lt;CR&gt;
+" 编辑Tag文件
+function EditTagFile()
+    exe ':e tags'
+    for lineNum in range(line('^'), line('$</span>'))
+        " 得到每一行的内容
+        let lineStr = getline(lineNum)
+        if matchstr(lineStr, '^!') == ""
+            let fileName = matchstr(lineStr, '<span class="command">\v</span><span class="command">\\</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)<span class="command">\ze</span>(<span class="command">\.</span>m)')
+            let tagName = matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\zs</span>(<span class="command">\S*</span>)<span class="command">\ze</span>(<span class="command">\t</span>)')
+            if fileName != tagName
+                let newLineStr = fileName.'.'.lineStr
+                call setline(lineNum, newLineStr)
+            endif
+        else
+            if matchstr(lineStr, '^!_TAG_FILE_SORTED') != ""
+                let startStr = matchstr(lineStr,'<span class="command">\v</span><span class="command">\zs</span>(^)<span class="command">\S*</span><span class="command">\ze</span>(<span class="command">\t</span>)')
+                let endStr = matchstr(lineStr, '<span class="command">\v</span><span class="command">\d</span><span class="command">\t</span><span class="command">\zs</span>(.*)<span class="command">\ze</span>(<span class="formula">$)')
+                let newLineStr = startStr."<span class="command">\t</span>"."0"."<span class="command">\t</span>".endStr
+                call setline(lineNum, newLineStr)
+            endif
+        endif
+    endfor
+    exe ':w'
+    exe ':bdelete tags'
+endfunction
+
+autocmd FileType matlab map &lt;C-<span class="special">]</span>&gt; :call MyFindTag() &lt;CR&gt;zRz.
+" 搜索tag
+function MyFindTag()
+    let tagFullName = expand("&lt;cWORD&gt;")
+    if matchstr(tagFullName, '<span class="command">\v</span><span class="command">\(</span>') != ""
+        let tagFullName = matchstr(tagFullName, '<span class="command">\v</span>(<span class="command">\w</span>|_|<span class="command">\.</span>)*<span class="command">\ze</span>(<span class="command">\(</span>)')
+    end
+    let tagName = expand("&lt;cword&gt;")
+    if tagName == tagFullName
+        " 是否已在函数定义位置
+        let lineStrTemp = getline('.')
+        if matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>(function)<span class="command">\ze</span>(<span class="command">\s</span>)') != ""
+            return
+        else
+            exe ':ta '.tagName
+        endif
+    else
+        let objName = matchstr(tagFullName, '<span class="command">\v</span><span class="command">\zs</span>(.*)<span class="command">\ze</span>(<span class="command">\.</span>)')
+        let funcName = matchstr(tagFullName, '<span class="command">\v</span><span class="command">\.</span><span class="command">\zs</span>(<span class="command">\w</span>+)')
+        " 类中定义的子函数
+        if objName == "obj"
+            for lineNumTemp in range(line('^'), line('$</span>'))
+                let lineStrTemp = getline(lineNumTemp)
+                if matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>(classdef)<span class="command">\ze</span>(<span class="command">\s</span>)') != ""
+                    let className = matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span>classdef<span class="command">\s*</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)')
+                    " exe ':tag '.tagName
+                    break
+                endif
+            endfor
+        else
+            " 得到类的定义函数
+            let endLineNum = line('.')
+            while 1
+                let isFindName = 0
+                exe ':echo '.isFindName
+                for lineNum in range(line('^'), endLineNum - 1)
+                    " 得到每一行的内容
+                    let lineStr = getline(lineNum)
+                    if matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>('.objName.')<span class="command">\s*</span><span class="command">\=</span>') != ""
+                        if matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>('.objName.')<span class="command">\s*</span><span class="command">\=</span><span class="command">\s*</span>'.objName.'<span class="command">\.</span>') == ""
+                            " 得到类名字
+                            let objName = matchstr(lineStr, '<span class="command">\v</span><span class="command">\=</span><span class="command">\s*</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)<span class="command">\ze</span>(<span class="command">\(</span>|;)')
+                            let endLineNum = lineNum
+                            let isFindName = 1
+                            break
+                        end
+                    endif
+                endfor
+                if isFindName == 0 || endLineNum &lt;= 0
+                    let className = objName
+                    break
+                endif
+            endwhile
+        endif
+        " 得到要搜索的tag的名字
+        let tagName = className.'.'.funcName
+        exe ':tag '.tagName
+    endif
+endfunction
+</code></pre><h2 id="设置_Snippet_的_MATLAB_支持">设置 Snippet 的 MATLAB 支持</h2>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -119,7 +211,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://www.chenpengdsp.com/2014/11/18/0003_MATLAB_VIM_3/" data-title="使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持 | Peng 的博客" data-tsina="1917001683" class="share clearfix">
+  <div data-url="http://www.chenpengdsp.com/2014/11/18/2014_11_18_03_MATLAB_VIM_3/" data-title="使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持 | Peng 的博客" data-tsina="1917001683" class="share clearfix">
   </div>
 
 </div>
@@ -128,11 +220,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2014/11/19/2014_11_18_02_MATLAB_VIM_2/" title="使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件">
+  <strong>上一篇：</strong><br/>
+  <span>
+  使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2014/11/18/0002_MATLAB_VIM_2/"  title="使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件">
+<a href="/2014/11/18/2014_11_18_01_MATLAB_VIM_1/"  title="使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用">
  <strong>下一篇：</strong><br/> 
- <span>使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件
+ <span>使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用
 </span>
 </a>
 </div>
@@ -157,7 +257,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MATLAB_语言支持"><span class="toc-number">1.</span> <span class="toc-text">MATLAB 语言支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完善你的编辑器"><span class="toc-number">2.</span> <span class="toc-text">完善你的编辑器</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置_Ctags_的_MATLAB_支持"><span class="toc-number">2.</span> <span class="toc-text">设置 Ctags 的 MATLAB 支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置_Snippet_的_MATLAB_支持"><span class="toc-number">3.</span> <span class="toc-text">设置 Snippet 的 MATLAB 支持</span></a></li></ol>
  
   </div>
 
