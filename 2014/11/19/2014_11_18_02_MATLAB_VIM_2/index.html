@@ -111,11 +111,11 @@ Ctags 插件的作用
 <li><p>Ctags 插件的安装</p>
 <p>  到官方网站（<a href="http://ctags.sourceforge.net/" target="_blank" rel="external">http://ctags.sourceforge.net/</a> ）下载Ctags，选择“Source and binary for Windows 98/NT/2000/XP”版本，解压缩下载的文件，将ctags.exe文件放到 D:\Vim\vim74\ 文件夹中即可。</p>
 <p>  将以下代码加入到VIM配置文件中：</p>
-<pre><code><span class="xml"><span class="tag">  " =<span class="value">==============Ctags===============</span>
-  " 生成<span class="attribute">Ctags</span> &lt;<span class="attribute">F8</span>&gt;</span>
+<pre><code>  " ===============Ctags===============
+  " 生成Ctags <span class="tag">&lt;<span class="title">F8</span>&gt;</span>
   map <span class="tag">&lt;<span class="title">F8</span>&gt;</span> :!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span>
   imap <span class="tag">&lt;<span class="title">F8</span>&gt;</span> <span class="tag">&lt;<span class="title">ESC</span>&gt;</span>:!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span>
-  set tags=tags;</span>
+  set tags=tags;
 </code></pre></li>
 <li><p>Ctags 插件的使用说明：</p>
 <ul>
@@ -282,7 +282,7 @@ vmap t, :Tabularize /,\zs&lt;CR&gt;</span>
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      # <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
