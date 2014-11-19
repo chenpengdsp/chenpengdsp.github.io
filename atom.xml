@@ -4,7 +4,7 @@
   <subtitle><![CDATA[我在这里]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.chenpengdsp.com/"/>
-  <updated>2014-11-19T08:43:53.804Z</updated>
+  <updated>2014-11-19T11:14:58.842Z</updated>
   <id>http://www.chenpengdsp.com/</id>
   
   <author>
@@ -401,11 +401,11 @@
 <li><p>Ctags 插件的安装</p>
 <p>  到官方网站（<a href="http://ctags.sourceforge.net/" target="_blank" rel="external">http://ctags.sourceforge.net/</a> ）下载Ctags，选择“Source and binary for Windows 98/NT/2000/XP”版本，解压缩下载的文件，将ctags.exe文件放到 D:\Vim\vim74\ 文件夹中即可。</p>
 <p>  将以下代码加入到VIM配置文件中：</p>
-<pre><code>  " ===============Ctags===============
-  " 生成Ctags <span class="tag">&lt;<span class="title">F8</span>&gt;</span>
+<pre><code><span class="xml"><span class="tag">  " =<span class="value">==============Ctags===============</span>
+  " 生成<span class="attribute">Ctags</span> &lt;<span class="attribute">F8</span>&gt;</span>
   map <span class="tag">&lt;<span class="title">F8</span>&gt;</span> :!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span>
   imap <span class="tag">&lt;<span class="title">F8</span>&gt;</span> <span class="tag">&lt;<span class="title">ESC</span>&gt;</span>:!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span>
-  set tags=tags;
+  set tags=tags;</span>
 </code></pre></li>
 <li><p>Ctags 插件的使用说明：</p>
 <ul>
