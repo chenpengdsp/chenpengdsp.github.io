@@ -1,26 +1,100 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Peng 的博客]]></title>
-  <subtitle><![CDATA[我在这里]]></subtitle>
-  <link href="/atom.xml" rel="self"/>
-  <link href="http://www.chenpengdsp.com/"/>
-  <updated>2014-11-19T08:43:53.804Z</updated>
-  <id>http://www.chenpengdsp.com/</id>
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
   
-  <author>
-    <name><![CDATA[Peng Chen]]></name>
-    <email><![CDATA[chenpengdsp@gmail.com]]></email>
-  </author>
-  
-  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[Markdown 语法说明 (简体中文版)]]></title>
-    <link href="http://www.chenpengdsp.com/2014/11/19/2014_11_19_01_MARKDOWN/"/>
-    <id>http://www.chenpengdsp.com/2014/11/19/2014_11_19_01_MARKDOWN/</id>
-    <published>2014-11-19T08:43:02.000Z</published>
-    <updated>2014-11-19T08:43:02.000Z</updated>
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+    <title>Markdown 语法说明 (简体中文版) | Peng 的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Peng Chen">
+    
+    <meta name="description" content="概述
+宗旨
+Markdown 的目标是实现「易读易写」。
+可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法受到一些既有 text-to-HTML 格式的影响，包括 Setext、">
+    
+    
+    
+    
+    <link rel="alternative" href="/atom.xml" title="Peng 的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Peng 的博客" title="Peng 的博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Peng 的博客">Peng 的博客</a></h1>
+				<h2 class="blog-motto">我在这里</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+						<li><a href="/atom.xml">Rss</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:www.chenpengdsp.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/11/19/2014_11_19_01_MARKDOWN/" title="Markdown 语法说明 (简体中文版)" itemprop="url">Markdown 语法说明 (简体中文版)</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="http://www.chenpengdsp.com/about" title="Peng Chen" target="_blank" itemprop="author">Peng Chen</a>
+		
+  <p class="article-time">
+    <time datetime="2014-11-19T08:43:02.000Z" itemprop="datePublished"> 发表于 2014-11-19</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#宗旨"><span class="toc-number">1.1.</span> <span class="toc-text">宗旨</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容_HTML"><span class="toc-number">1.2.</span> <span class="toc-text">兼容 HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊字符自动转换"><span class="toc-number">1.3.</span> <span class="toc-text">特殊字符自动转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区块元素"><span class="toc-number">2.</span> <span class="toc-text">区块元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#段落和换行"><span class="toc-number">2.1.</span> <span class="toc-text">段落和换行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标题"><span class="toc-number">2.2.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区块引用_Blockquotes"><span class="toc-number">2.3.</span> <span class="toc-text">区块引用 Blockquotes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表"><span class="toc-number">2.4.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码区块"><span class="toc-number">2.5.</span> <span class="toc-text">代码区块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分隔线"><span class="toc-number">2.6.</span> <span class="toc-text">分隔线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区段元素"><span class="toc-number">3.</span> <span class="toc-text">区段元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#链接"><span class="toc-number">3.1.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强调"><span class="toc-number">3.2.</span> <span class="toc-text">强调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片"><span class="toc-number">3.4.</span> <span class="toc-text">图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">4.</span> <span class="toc-text">其它</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自动链接"><span class="toc-number">4.1.</span> <span class="toc-text">自动链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反斜杠"><span class="toc-number">4.2.</span> <span class="toc-text">反斜杠</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown_免费编辑器"><span class="toc-number">5.</span> <span class="toc-text">Markdown 免费编辑器</span></a></li></ol>
+		
+		</div>
+		
+		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 <!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
 
@@ -367,702 +441,356 @@
 <p>*** 如有更好的 Markdown 免费编辑器推荐，请到这里反馈，谢谢！</p>
 <hr>
 <p>版权所有,转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<!--行内公式采用\\(**\\)，行间公式 $$ *]]>
-    </summary>
-    
-      <category term="markdown" scheme="http://www.chenpengdsp.com/tags/markdown/"/>
-    
-      <category term="Markdown" scheme="http://www.chenpengdsp.com/categories/Markdown/"/>
-    
-  </entry>
   
-  <entry>
-    <title><![CDATA[使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件]]></title>
-    <link href="http://www.chenpengdsp.com/2014/11/19/2014_11_18_02_MATLAB_VIM_2/"/>
-    <id>http://www.chenpengdsp.com/2014/11/19/2014_11_18_02_MATLAB_VIM_2/</id>
-    <published>2014-11-18T16:35:47.000Z</published>
-    <updated>2014-11-18T16:35:47.000Z</updated>
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
 
-<!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
-
-
-<h2 id="VIM_插件推荐">VIM 插件推荐</h2>
-<p>为了完善VIM的功能，我将介绍几个插件，包括Ctags, WinManager, pathogen, EasyMotion, Tabular。</p>
-<h3 id="Ctags_插件">Ctags 插件</h3>
-<ul>
-<li><p>Ctags 插件的作用</p>
-<p>  Ctags 插件实现了函数之间的跳转功能，即当我们在代码中调用某个函数时，如果我们想进入该函数的定义位置，便可采用Ctags插件实现。</p>
-</li>
-<li><p>Ctags 插件的安装</p>
-<p>  到官方网站（<a href="http://ctags.sourceforge.net/" target="_blank" rel="external">http://ctags.sourceforge.net/</a> ）下载Ctags，选择“Source and binary for Windows 98/NT/2000/XP”版本，解压缩下载的文件，将ctags.exe文件放到 D:\Vim\vim74\ 文件夹中即可。</p>
-<p>  将以下代码加入到VIM配置文件中：</p>
-<pre><code>  " ===============Ctags===============
-  " 生成Ctags <span class="tag">&lt;<span class="title">F8</span>&gt;</span>
-  map <span class="tag">&lt;<span class="title">F8</span>&gt;</span> :!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span>
-  imap <span class="tag">&lt;<span class="title">F8</span>&gt;</span> <span class="tag">&lt;<span class="title">ESC</span>&gt;</span>:!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span>
-  set tags=tags;
-</code></pre></li>
-<li><p>Ctags 插件的使用说明：</p>
-<ul>
-<li><p>Ctags 的工作依靠于tags文件，在Normal模式下，按下F8生成Tags文件。</p>
-</li>
-<li><p>在函数名位置处按下Ctrl+]，进入该函数的定义位置。按下 Ctrl+T 返回。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="WinManager_插件">WinManager 插件</h3>
-<ul>
-<li>WinManager 插件的作用</li>
-</ul>
-<p>WinManager 插件的 VIM 外观如下图所示：</p>
-<p><img src="http://chenpengdsp.qiniudn.com/2014_11_18_02_MATLAB_VIM_2_MW.JPG" alt="WinManager 插件的 VIM 外观"></p>
-<h3 id="pathogen_插件">pathogen 插件</h3>
-<h3 id="EasyMotion_插件">EasyMotion 插件</h3>
-<h3 id="Tabular_插件">Tabular 插件</h3>
-<p>在配置文件中加入如下代码：</p>
-<pre><code><span class="string">" ===============WinManager设置===============
-nmap mw :WMToggle&lt;cr&gt;
-let g:winManagerWindowLayout='NERDTree|BufExplorer'
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Markdown/">Markdown</a>
+</div>
 
 
-"</span> <span class="subst">===============</span>pathogen 支持<span class="subst">===============</span>
-execute pathogen<span class="variable">#infect</span>()
-
-
-<span class="string">" ===============拼写检查===============
-set nocp
-"</span> 字典设置
-<span class="keyword">let</span> g:cvimsyn<span class="subst">=</span><span class="string">'D:\Vim\vimfiles\CVIMSYN'</span>
-<span class="keyword">let</span> g:spchkautonext<span class="subst">=</span> <span class="number">1</span>
-<span class="keyword">let</span> g:spchkdialect <span class="subst">=</span> <span class="string">"usa"</span> 
-
-<span class="string">" ===============LATEX支持===============
-"</span> 设置格式
-autocmd BufNewFile,BufRead <span class="subst">*</span><span class="built_in">.</span>tex <span class="built_in">set</span> filetype<span class="subst">=</span>tex
-<span class="string">" 设置编码
-autocmd FileType tex setlocal et sta fileencoding=utf-8
-"</span> 设置字体
-autocmd FileType tex <span class="built_in">set</span> guifont<span class="subst">=</span>Yahei<span class="subst">\</span> Mono:h16
-<span class="string">" 设置设置拼写检查
-autocmd BufNewFile,BufRead *.tex set spell
-set shellslash
-set grepprg=grep\ -nH\ $*
-"</span> 编译与查看设置
-<span class="keyword">let</span> g:tex_flavor<span class="subst">=</span><span class="string">'latex'</span>
-<span class="keyword">let</span> g:Tex_DefaultTargetFormat <span class="subst">=</span> <span class="string">'pdf'</span>
-<span class="keyword">let</span> g:Tex_ViewRule_pdf <span class="subst">=</span> <span class="string">'SumatraPDF -reuse-instance -inverse-search "gvim -c \":RemoteOpen +\%l \%f\""'</span> 
-<span class="keyword">let</span> g:Tex_CompileRule_pdf <span class="subst">=</span> <span class="string">'pdflatex --synctex=-1 -src-specials -interaction=nonstopmode $*'</span>
-<span class="string">" let g:Tex_CompileRule_pdf = 'xelatex --synctex=-1 -src-specials -interaction=nonstopmode $*'
-"</span> 设置多次编译 以包含参考文献
-<span class="keyword">let</span> g:Tex_MultipleCompileFormats <span class="subst">=</span> <span class="string">'dvi,pdf'</span>
-<span class="string">" 自动换行设置
-let g:tex_indent_items=0
-"</span> 不进行符号的转义显示
-<span class="keyword">let</span> g:tex_conceal<span class="subst">=</span><span class="string">''</span>
-<span class="string">" TIP: if you write your \label's as \label{fig:something}, then if you type in \ref{fig: and press &lt;C-n&gt; you will automatically cycle through all the figure labels. Very useful!
-set iskeyword+=:
-"</span> 禁用宏
-<span class="string">" let g:Imap_FreezeImap=1
-"</span> <span class="subst">&lt;</span>F2<span class="subst">&gt;</span>编译
-autocmd FileType tex nmap <span class="subst">&lt;</span>F2<span class="subst">&gt;</span> <span class="subst">\</span>ll<span class="subst">|</span>imap <span class="subst">&lt;</span>F2<span class="subst">&gt;</span> <span class="subst">&lt;</span>ESC<span class="subst">&gt;</span>:w<span class="subst">&lt;</span>CR<span class="subst">&gt;\</span>ll<span class="subst">|</span>vmap <span class="subst">&lt;</span>F2<span class="subst">&gt;</span> <span class="subst">&lt;</span>ESC<span class="subst">&gt;</span>:w<span class="subst">&lt;</span>CR<span class="subst">&gt;\</span>ll
-<span class="string">" &lt;F3&gt;查看
-autocmd FileType tex nmap &lt;F3&gt; &lt;ESC&gt;\lv|imap &lt;F3&gt; &lt;ESC&gt;\lv|vmap &lt;F3&gt; &lt;ESC&gt;\lv
-"</span> <span class="subst">&lt;</span>C<span class="attribute">-b</span><span class="subst">&gt;</span> 黑体
-autocmd FileType tex imap <span class="subst">&lt;</span>C<span class="attribute">-B</span><span class="subst">&gt;</span> bf<span class="subst">&lt;</span>Tab<span class="subst">&gt;</span>
-<span class="string">" 自动补全neocomplcache
-autocmd FileType tex let g:neocomplcache_enable_at_startup = 1
-"</span> 自动补全字典设置
-autocmd FileType tex setlocal dictionary<span class="subst">+=</span>D:<span class="subst">\</span>Vim<span class="subst">\</span>vimfiles<span class="subst">\</span>dict<span class="subst">\</span>english<span class="built_in">.</span>dict
-autocmd FileType tex setlocal complete<span class="subst">+=</span>k 
-
-<span class="string">" ===============Markdown===============
-"</span> 设置格式
-autocmd BufNewFile,BufRead <span class="subst">*</span><span class="built_in">.</span>{md,mdown,mkd,mkdn,markdown,mdwn} <span class="built_in">set</span> filetype<span class="subst">=</span>mkd
-
-<span class="string">" ===============TXT===============
-"</span> 设置格式
-autocmd BufNewFile,BufRead <span class="subst">*</span><span class="built_in">.</span>{txt} <span class="built_in">set</span> filetype<span class="subst">=</span>txt
-autocmd FileType txt <span class="built_in">set</span> wrap
-
-<span class="string">" ===============EasyMotion===============
-let g:EasyMotion_do_mapping = 0 "</span> Disable default mappings
-<span class="string">" Bi-directional find motion
-"</span> Jump <span class="keyword">to</span> anywhere you want <span class="keyword">with</span> <span class="literal">minimal</span> keystrokes, <span class="keyword">with</span> just one key binding<span class="built_in">.</span>
-<span class="string">" `s{char}{label}`
-nmap s &lt;Plug&gt;(easymotion-s)
-"</span> <span class="literal">or</span>
-<span class="string">" `s{char}{char}{label}`
-"</span> Need one more keystroke, but <span class="keyword">on</span> <span class="keyword">average</span>, it may be more comfortable<span class="built_in">.</span>
-nmap s <span class="subst">&lt;</span>Plug<span class="subst">&gt;</span>(easymotion<span class="attribute">-s2</span>)
-<span class="string">" Turn on case sensitive feature
-let g:EasyMotion_smartcase = 1
-"</span> JK motions: Line motions
-<span class="built_in">map</span> <span class="subst">&lt;</span>Leader<span class="subst">&gt;</span>j <span class="subst">&lt;</span>Plug<span class="subst">&gt;</span>(easymotion<span class="attribute">-j</span>)
-<span class="built_in">map</span> <span class="subst">&lt;</span>Leader<span class="subst">&gt;</span>k <span class="subst">&lt;</span>Plug<span class="subst">&gt;</span>(easymotion<span class="attribute">-k</span>)
-
-<span class="string">" ===============格式化文本===============
-"</span> Tabular
-<span class="string">" 以等号对其
-nmap t= :Tabularize /=&lt;CR&gt;
-vmap t= :Tabularize /=&lt;CR&gt;
-"</span> 对其分号之后的部分
-nmap t: :Tabularize <span class="subst">/</span>:<span class="subst">\</span>zs<span class="subst">&lt;</span>CR<span class="subst">&gt;</span>
-vmap t: :Tabularize <span class="subst">/</span>:<span class="subst">\</span>zs<span class="subst">&lt;</span>CR<span class="subst">&gt;</span>
-<span class="string">" 对其逗号之后的部分
-nmap t, :Tabularize /,\zs&lt;CR&gt;
-vmap t, :Tabularize /,\zs&lt;CR&gt;</span>
-</code></pre><h2 id="Snippet_插件">Snippet 插件</h2>
-]]></content>
-    <summary type="html">
-    <![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<!--行内公式采用\\(**\\)，行间公式 $$ *]]>
-    </summary>
-    
-      <category term="matlab" scheme="http://www.chenpengdsp.com/tags/matlab/"/>
-    
-      <category term="vim" scheme="http://www.chenpengdsp.com/tags/vim/"/>
-    
-      <category term="MATLAB" scheme="http://www.chenpengdsp.com/categories/MATLAB/"/>
-    
-  </entry>
+  <div class="article-tags">
   
-  <entry>
-    <title><![CDATA[使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持]]></title>
-    <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_18_03_MATLAB_VIM_3/"/>
-    <id>http://www.chenpengdsp.com/2014/11/18/2014_11_18_03_MATLAB_VIM_3/</id>
-    <published>2014-11-18T15:48:35.000Z</published>
-    <updated>2014-11-18T15:48:35.000Z</updated>
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+  <span></span> <a href="/tags/markdown/">markdown</a>
+  </div>
 
-<!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
+</div>
 
-<h2 id="前言">前言</h2>
-<p>由于 VIM 的强大特性，使其可以适用于各种程序语言的书写，本文将设置 VIM 的配置，使其能够更好的支持 MATLAB 语言。</p>
-<h2 id="设置_Ctags_的_MATLAB_支持">设置 Ctags 的 MATLAB 支持</h2>
-<p>Ctags 插件的安装过程请移步上一篇博客， Ctags 可以支持简单的 MATLAB 代码的书写，但是最新的 MATLAB 版本已经支持了面向对象的编程方法，即类（class），Ctags 插件并不能很好的胜任面向对象的 MATLAB 函数间的跳转，所以我对 Ctags 插件进行了配置，并自定义了 MATLAB 语言的标签（tags）搜索方式。将以下代码复制到 VIM 的配置文件_vimrc中即可</p>
-<pre><code>" 设置matlab语言的ctags
-autocmd FileType matlab map &lt;F8&gt; :!Ctags --langdef=matlab --langmap=matlab.m --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*<span class="command">\\</span><span class="special">[</span>.*<span class="command">\\</span><span class="special">]</span><span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*=<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)/\1/f,function/" --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*=<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)/\1/f,function/" --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)<span class="special">[</span>^=<span class="special">]</span>*<span class="formula">$/\1/f,function/" --regex-matlab="/^.*<span class="command">\s*</span>function<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span>=<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\(</span>.*$</span>/\2/f,function/" --regex-matlab="/^.*<span class="command">\s*</span>function<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\(</span>.*<span class="formula">$/\1/f,function/" --languages=matlab --extra=+q --excmd=pattern -R .&lt;CR&gt;:call EditTagFile()&lt;CR&gt;
-" 编辑Tag文件
-function EditTagFile()
-    exe ':e tags'
-    for lineNum in range(line('^'), line('$</span>'))
-        " 得到每一行的内容
-        let lineStr = getline(lineNum)
-        if matchstr(lineStr, '^!') == ""
-            let fileName = matchstr(lineStr, '<span class="command">\v</span><span class="command">\\</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)<span class="command">\ze</span>(<span class="command">\.</span>m)')
-            let tagName = matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\zs</span>(<span class="command">\S*</span>)<span class="command">\ze</span>(<span class="command">\t</span>)')
-            if fileName != tagName
-                let newLineStr = fileName.'.'.lineStr
-                call setline(lineNum, newLineStr)
-            endif
-        else
-            if matchstr(lineStr, '^!_TAG_FILE_SORTED') != ""
-                let startStr = matchstr(lineStr,'<span class="command">\v</span><span class="command">\zs</span>(^)<span class="command">\S*</span><span class="command">\ze</span>(<span class="command">\t</span>)')
-                let endStr = matchstr(lineStr, '<span class="command">\v</span><span class="command">\d</span><span class="command">\t</span><span class="command">\zs</span>(.*)<span class="command">\ze</span>(<span class="formula">$)')
-                let newLineStr = startStr."<span class="command">\t</span>"."0"."<span class="command">\t</span>".endStr
-                call setline(lineNum, newLineStr)
-            endif
-        endif
-    endfor
-    exe ':w'
-    exe ':bdelete tags'
-endfunction
 
-autocmd FileType matlab map &lt;C-<span class="special">]</span>&gt; :call MyFindTag() &lt;CR&gt;zRz.
-" 搜索tag
-function MyFindTag()
-    let tagFullName = expand("&lt;cWORD&gt;")
-    if matchstr(tagFullName, '<span class="command">\v</span><span class="command">\(</span>') != ""
-        let tagFullName = matchstr(tagFullName, '<span class="command">\v</span>(<span class="command">\w</span>|_|<span class="command">\.</span>)*<span class="command">\ze</span>(<span class="command">\(</span>)')
-    end
-    let tagName = expand("&lt;cword&gt;")
-    if tagName == tagFullName
-        " 是否已在函数定义位置
-        let lineStrTemp = getline('.')
-        if matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>(function)<span class="command">\ze</span>(<span class="command">\s</span>)') != ""
-            return
-        else
-            exe ':ta '.tagName
-        endif
-    else
-        let objName = matchstr(tagFullName, '<span class="command">\v</span><span class="command">\zs</span>(.*)<span class="command">\ze</span>(<span class="command">\.</span>)')
-        let funcName = matchstr(tagFullName, '<span class="command">\v</span><span class="command">\.</span><span class="command">\zs</span>(<span class="command">\w</span>+)')
-        " 类中定义的子函数
-        if objName == "obj"
-            for lineNumTemp in range(line('^'), line('$</span>'))
-                let lineStrTemp = getline(lineNumTemp)
-                if matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>(classdef)<span class="command">\ze</span>(<span class="command">\s</span>)') != ""
-                    let className = matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span>classdef<span class="command">\s*</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)')
-                    " exe ':tag '.tagName
-                    break
-                endif
-            endfor
-        else
-            " 得到类的定义函数
-            let endLineNum = line('.')
-            while 1
-                let isFindName = 0
-                exe ':echo '.isFindName
-                for lineNum in range(line('^'), endLineNum - 1)
-                    " 得到每一行的内容
-                    let lineStr = getline(lineNum)
-                    if matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>('.objName.')<span class="command">\s*</span><span class="command">\=</span>') != ""
-                        if matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>('.objName.')<span class="command">\s*</span><span class="command">\=</span><span class="command">\s*</span>'.objName.'<span class="command">\.</span>') == ""
-                            " 得到类名字
-                            let objName = matchstr(lineStr, '<span class="command">\v</span><span class="command">\=</span><span class="command">\s*</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)<span class="command">\ze</span>(<span class="command">\(</span>|;)')
-                            let endLineNum = lineNum
-                            let isFindName = 1
-                            break
-                        end
-                    endif
-                endfor
-                if isFindName == 0 || endLineNum &lt;= 0
-                    let className = objName
-                    break
-                endif
-            endwhile
-        endif
-        " 得到要搜索的tag的名字
-        let tagName = className.'.'.funcName
-        exe ':tag '.tagName
-    endif
-endfunction
-</code></pre><h2 id="设置_Snippet_的_MATLAB_支持">设置 Snippet 的 MATLAB 支持</h2>
-]]></content>
-    <summary type="html">
-    <![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<div class="article-share" id="share">
 
-<!--行内公式采用\\(**\\)，行间公式 $$ *]]>
-    </summary>
-    
-      <category term="matlab" scheme="http://www.chenpengdsp.com/tags/matlab/"/>
-    
-      <category term="vim" scheme="http://www.chenpengdsp.com/tags/vim/"/>
-    
-      <category term="MATLAB" scheme="http://www.chenpengdsp.com/categories/MATLAB/"/>
-    
-  </entry>
+  <div data-url="http://www.chenpengdsp.com/2014/11/19/2014_11_19_01_MARKDOWN/" data-title="Markdown 语法说明 (简体中文版) | Peng 的博客" data-tsina="1917001683" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/11/19/2014_11_18_02_MATLAB_VIM_2/"  title="使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件">
+ <strong>下一篇：</strong><br/> 
+ <span>使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+
+<section class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#宗旨"><span class="toc-number">1.1.</span> <span class="toc-text">宗旨</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兼容_HTML"><span class="toc-number">1.2.</span> <span class="toc-text">兼容 HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#特殊字符自动转换"><span class="toc-number">1.3.</span> <span class="toc-text">特殊字符自动转换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区块元素"><span class="toc-number">2.</span> <span class="toc-text">区块元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#段落和换行"><span class="toc-number">2.1.</span> <span class="toc-text">段落和换行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#标题"><span class="toc-number">2.2.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#区块引用_Blockquotes"><span class="toc-number">2.3.</span> <span class="toc-text">区块引用 Blockquotes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表"><span class="toc-number">2.4.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码区块"><span class="toc-number">2.5.</span> <span class="toc-text">代码区块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分隔线"><span class="toc-number">2.6.</span> <span class="toc-text">分隔线</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#区段元素"><span class="toc-number">3.</span> <span class="toc-text">区段元素</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#链接"><span class="toc-number">3.1.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#强调"><span class="toc-number">3.2.</span> <span class="toc-text">强调</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">3.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片"><span class="toc-number">3.4.</span> <span class="toc-text">图片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它"><span class="toc-number">4.</span> <span class="toc-text">其它</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自动链接"><span class="toc-number">4.1.</span> <span class="toc-text">自动链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#反斜杠"><span class="toc-number">4.2.</span> <span class="toc-text">反斜杠</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown_免费编辑器"><span class="toc-number">5.</span> <span class="toc-text">Markdown 免费编辑器</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
   
-  <entry>
-    <title><![CDATA[使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用]]></title>
-    <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_18_01_MATLAB_VIM_1/"/>
-    <id>http://www.chenpengdsp.com/2014/11/18/2014_11_18_01_MATLAB_VIM_1/</id>
-    <published>2014-11-18T09:17:00.000Z</published>
-    <updated>2014-11-18T09:17:00.000Z</updated>
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/LATEX/" title="LATEX">LATEX<sup>1</sup></a></li>
+		
+			<li><a href="/categories/MATLAB/" title="MATLAB">MATLAB<sup>3</sup></a></li>
+		
+			<li><a href="/categories/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
+		
+		</ul>
+</div>
 
-<!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
 
-<h2 id="摘要">摘要</h2>
-<h2 id="前言">前言</h2>
-<p>如果你觉得MATLAB自带的编辑器对你而言足够了，那么请忽略本文，如果你想更高效的书写MATLAB程序，而且有足够的学习时间，可能要稀稀疏疏的把玩一周，你的代码书写会有质的飞跃。</p>
-<p>注意：本文所讨论的是Windows操作系统。</p>
-<h2 id="VIM_基本教程">VIM 基本教程</h2>
-<h3 id="VIM_安装">VIM 安装</h3>
-<p>VIM 安装，请移步VIM官方网站（ <a href="http://www.vim.org/download.php#pc" target="_blank" rel="external">http://www.vim.org/download.php#pc</a> ）下载，本文所使用的是Windows下的gvim，即<a href="http://www.vim.org/download.php#pc" target="_blank" rel="external">官网</a>中的“PC: MS-DOS and MS-Windows”分类，下载安装文件<a href="ftp://ftp.vim.org/pub/vim/pc/gvim74.exe" target="_blank" rel="external">gvim74.exe</a>.</p>
-<p>安装注意事项：</p>
-<ol>
-<li>建议安装在盘根目录（如D:Vim)；</li>
-<li>选择完全版本安装。</li>
-</ol>
-<h3 id="VIM_基本操作">VIM 基本操作</h3>
-<p>VIM编辑器的学习曲线是陡峭的，如果想在几天内成为高手是基本不可能的，所以我们需要一边使用一边学习，下面我介绍一些常用的VIM操作命令。</p>
-<ul>
-<li><p>Normal与Insert模式</p>
-<ul>
-<li><p>VIM编辑器将文本的编辑书写过程分为两个模式，即Normal和Insert模式，一般情况下，我们在Insert模式输入内容，在Normal模式下编辑内容。</p>
-</li>
-<li><p>按下i键，从Normal模式（打开VIM时默认模式）转换为Insert模式，便可像普通记事本一样进行输入操作。按下Esc键，便可返回Normal模式。本文所述编辑命令都是在Normal模式下进行的。</p>
-</li>
-</ul>
-</li>
-<li><p>插入命令（i，I，a，A）</p>
-<ul>
-<li><p>我们已经知道了从Normal模式转换为Insert模式是i键，其实i键的意思是在光标所在位置之前插入文本，如果我们想在光标所在位置之后插入文本，则需要按下a键。</p>
-</li>
-<li><p>如果光标在一行的中间，而我们想在本行的开头处插入本文，则要按下I键（即Shift+a）。相应地，如果我们想在本行的末尾处插入文本，则要按下A键（即Shift+a）。</p>
-</li>
-</ul>
-</li>
-<li><p>移动命令（h, j, k, l）</p>
-<ul>
-<li><p>VIM 比其他编辑器高效的主要原因在于，我们可以在整个代码书写的过程中，不离开键盘，不用鼠标，而其中最主要的便是高效移动命令。</p>
-</li>
-<li><p>在Normal模式下（任何时候按下Esc键，进入Normal模式），按下h键向左移动光标，按下l键向右移动光标，按下k键，光标移动到上一行，按下j键，光标移动到下一行。</p>
-</li>
-<li><p>在Normal模式下，按下gg键，移动到文件最开始位置，按下G（Shift+g）移动到文件的最末尾位置。</p>
-</li>
-<li><p>在Normal模式下，按下10G（Shift+g）键，移动到文件第10行。</p>
-</li>
-</ul>
-</li>
-<li><p>翻页命令</p>
-<ul>
-<li>在Normal模式下，Ctrl+f 表示向前翻一页，Ctrl+b 表示向后翻一页。</li>
-</ul>
-</li>
-<li><p>定位命令（f, F）</p>
-<ul>
-<li><p>^ (Shift+6) 光标移动到一行的文字最开始位置。</p>
-</li>
-<li><p>$ (Shift+4) 光标移动到一行的最末尾位置。</p>
-</li>
-<li><p>0 (Shift+4) 光标移动到一行的最开始位置。</p>
-</li>
-<li><p>在一行之中向前定位到指定位置，首先按下f，然后按下需要定位位置的字母，例如以下句子，光标位于i的位置，我们如果想定位到t位置，则需按下ft即可。</p>
-<p>There is a test.</p>
-</li>
-<li><p>而F（Shift+f）是先前搜索定位，还是之前的例子，此时光标在t的位置，如果我们想定位到i位置，需要输入Fi即可。</p>
-</li>
-</ul>
-</li>
-<li><p>选择命令</p>
-<ul>
-<li><p>在Normal模式下，按下v进入选择模式，此时再按下移动命令，如h、j、k、l便可选择文本。</p>
-</li>
-<li><p>在Normal模式下，按下V (Shift+v) 进入按列选择模式，此时再按下移动命令，如j、k便可按列选择文本。</p>
-</li>
-<li><p>在Normal模式下，按下 Ctrl+q 进入按列选择模式，此时再按下移动命令，如h、j、k、l便可选择矩形文本内容。</p>
-</li>
-<li><p>由于VIM的思想是命令的组合，例如有如下句子，光标在i位置我们想选择到t位置，便可按下v键，进入选择状态，在按下f键，进入查找状态，在按下响应的查找字母t，便可选择文本“is a t”。</p>
-<p>There is a test.</p>
-</li>
-</ul>
-</li>
-<li><p>删除命令</p>
-<ul>
-<li><p>在Normal模式下，删除一个字母命令x。</p>
-</li>
-<li><p>在Normal模式下，删除一整行命令dd。</p>
-</li>
-<li><p>在Normal模式下，按下v（或者V，Ctrl+q）进入选择模式，并通过移动命令选择一段文本，此时按下d键，变可删除此段文本。</p>
-</li>
-<li><p>如果要改写一整行的内容，按下cc，便删除一整行，并进入插入模式。</p>
-</li>
-</ul>
-</li>
-<li><p>复制命令</p>
-<ul>
-<li><p>在Normal模式下，复制命令y。此命令可以结合选择命令，即通过按键v进入选择命令，并选择部分文本，再按下y，便可复制选择的文本。</p>
-</li>
-<li><p>在Normal模式下，复制一整行命令yy。</p>
-</li>
-</ul>
-</li>
-<li><p>更改命令</p>
-<ul>
-<li><p>r 将光标所在位置的字母进行更改。如This is a tbst, 光标在b位置，我们按下re，便可将b改为e。</p>
-</li>
-<li><p>R (shift+r) 如果有连续的多个字母需要更改，如This is a tght, 光标在b位置，我们按下 R (shift+r) ，进入更改模式，再依次输入es，最后按下Esc，便可将tght改写为test。</p>
-</li>
-</ul>
-</li>
-<li><p>粘贴命令</p>
-<ul>
-<li><p>p 命令为粘贴命令，在VIM中进行复制（y）和删除（d，x）操作后的内容会保存到内存中，此时按下p键，便可将内容中的文件内容粘贴到光标之后位置。</p>
-</li>
-<li><p>P (Shift+p) 命令为粘贴命令, 可将内容中的文件内容粘贴到光标之前位置。</p>
-</li>
-</ul>
-</li>
-<li><p>缩进命令</p>
-<ul>
-<li><p>>> 命令使本行代码向右缩进。</p>
-</li>
-<li><p>&lt;&lt; 命令使本行代码向左缩进。</p>
-</li>
-<li><p>缩进一段代码，按下V进入行选择状态，通过j、k操作选择一段代码，再按下 > 向右缩进，按下 &lt; 向左缩进。</p>
-</li>
-</ul>
-</li>
-<li><p>标记书签命令</p>
-<ul>
-<li><p>m命令为书签命令，如ma在光标位置设置名为a的书签，同理mb设置名为b的书签。</p>
-</li>
-<li><p>`a 命令移动光标到书签a处，`b 命令移动光标到书签b处。</p>
-</li>
-<li><p>`. 命令移动光标到刚刚修改的内容位置。</p>
-</li>
-</ul>
-</li>
-<li><p>代码折叠</p>
-<ul>
-<li><p>za 命令折叠与展开一段代码。</p>
-</li>
-<li><p>zM 命令折叠所有代码。</p>
-</li>
-<li><p>zR 命令展开所有折叠。</p>
-</li>
-</ul>
-</li>
-<li><p>代码补全</p>
-<ul>
-<li><p>在插入模式下，输入变量的前几个单词之后，按下Ctrl+n，出现代码补全窗口，继续按Ctrl+n，进行向下选择补全，按下Ctrl+p 向上选择补全。</p>
-</li>
-<li><p>在插入模式下，输入一行代码的前几个单词之后，按下Ctrl+x, Ctrl+l, 出现整句代码补全窗口，继续按Ctrl+n，进行向下选择补全，按下Ctrl+p 向上选择补全。</p>
-</li>
-</ul>
-</li>
-<li><p>其他命令</p>
-<ul>
-<li><p>~ (Shift+`) 改变字母大小写。</p>
-</li>
-<li><p>u 命令撤销更改，返回比较旧的结果。</p>
-</li>
-<li><p>Ctrl+r 取消刚刚u命令的更改，得到比较新的结果。</p>
-</li>
-<li><p>在Normal模式下，按下:e test.txt，再按回车键，便可新建一个test.txt文档。</p>
-</li>
-<li><p>在Normal模式下，按下:w，再按回车键，便可保存文件。</p>
-</li>
-</ul>
-</li>
-<li><p>高级命令组合</p>
-<ul>
-<li><p>注释一段代码：在Normal模式下，光标定位到第一行代码前面，按下Ctrl+q进入列选择模式，再按下j，向下选择一列文本，在按下I（Shift+i），进入插入模式，输入% ，再按下Esc，便可在一段代码前面都加上% ，注释该段代码。</p>
-</li>
-<li><p>删除一个单词，并写入其他替换单词：在Normal模式下，光标定位到该单词，按下ciw即可，其中c表示修改，i表示内部，w表示单词。</p>
-</li>
-<li><p>复制括号中内容：在Normal模式下，光标定位到括号中，如果是小括号，按下yi), 如果是中括号，按下yi], 如果是大括号, 按下yi}, 其中y表示复制，i表示括号内，)、]、}表示相应的括号。</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="修改_VIM_配置文件">修改 VIM 配置文件</h2>
-<p>为了更方面VIM的使用，我们将修改VIM的配置文件，点击编辑-启动设定，进入配置文件，删除配置文件内容，并将如下代码复制粘贴（命令p）到该配置文件中，并保存（命令:w）。我们推荐编程字体为Yahei Mono。</p>
-<p>配置文件（_vimrc）内容：</p>
-<pre><code><span class="string">" 关闭兼容模式
-set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
-
-"</span> 长行显示
-set display=lastline
-
-<span class="string">" gvim字体设置 (12号字体)
-set guifont=Yahei\ Mono:h12
-
-"</span> gvim内部编码
-set encoding=utf-<span class="number">8</span>
-
-<span class="string">" 语法匹配
-syntax on
-
-"</span> gvim打开支持编码的文件
-set fileencodings=ucs-bom,utf-<span class="number">8</span>,gbk,cp936,gb2312,big5,euc-jp,euc-kr,latin1
-
-<span class="string">" 解决consle输出乱码
-language messages zh_CN.utf-8
-
-"</span> 解决菜单乱码
-source <span class="variable">$VIMRUNTIME</span>/delmenu.vim
-source <span class="variable">$VIMRUNTIME</span>/menu.vim
-
-<span class="string">" 设置终端编码为gvim内部编码encoding
-let &amp;termencoding=&amp;encoding
-
-"</span> 防止特殊符号无法正常显示
-set ambiwidth=double
-
-<span class="string">" 缩进尺寸为4个空格
-set sw=4
-
-"</span> tab宽度为<span class="number">4</span>个字符
-set ts=<span class="number">4</span>
-<span class="input"><span class="prompt">
-" 重新打开文件时，跳到上次打开位置
-if has("autocmd")
-    au BufReadPost * if line("'\"") &gt;</span> <span class="number">1</span> &amp;&amp; line(<span class="string">"'\""</span>) &lt;= line(<span class="string">"$"</span>) | exe <span class="string">"normal! g'\""</span> | endif</span>
-endif
-
-<span class="string">" 设置剪切板为默认寄存器
-set clipboard=unnamed
-
-"</span> 缓冲区切换，在<span class="constant">Normal</span>模式下按下<span class="constant">Tab</span>键即可切换缓冲区，按下<span class="constant">Alt</span>+数字键，便可切换到对应的缓冲区
-<span class="input"><span class="prompt">nmap &lt;Tab&gt;</span> &lt;<span class="constant">C</span>-^&gt;
-nmap &lt;<span class="constant">S</span>-<span class="constant">Tab</span>&gt; <span class="symbol">:bnext&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-1&gt;</span> <span class="symbol">:b1&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-2&gt;</span> <span class="symbol">:b2&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-3&gt;</span> <span class="symbol">:b3&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-4&gt;</span> <span class="symbol">:b4&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-5&gt;</span> <span class="symbol">:b5&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-6&gt;</span> <span class="symbol">:b6&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-7&gt;</span> <span class="symbol">:b7&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-8&gt;</span> <span class="symbol">:b8&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">nmap &lt;A-9&gt;</span> <span class="symbol">:b9&lt;CR&gt;</span></span>
-<span class="input"><span class="prompt">
-" 之前设置断点，按下F11，设置MATLAB运行断点
-map &lt;F11&gt;</span> <span class="constant">Odbstack</span>; keyboard;&lt;<span class="constant">Esc</span>&gt;
-<span class="string">" 之后设置断点，按下F12，设置MATLAB运行断点
-map &lt;F12&gt; odbstack; keyboard;&lt;Esc&gt;
-
-"</span> 空格键翻页，<span class="constant">Normal</span>模式按下空格键翻页</span>
-<span class="input"><span class="prompt">map &lt;Space&gt;</span> &lt;<span class="constant">C</span>-<span class="constant">F</span>&gt;
-
-<span class="string">" 关闭子窗口，Normal模式下按下F4关闭窗口
-nmap &lt;F4&gt; &lt;C-W&gt;c
-
-"</span> 编辑时将所有tab替换为空格</span>
-set et
-
-<span class="string">" 生成备份文件
-set nobackup
-
-"</span> 开启行号标记
-set number
-
-<span class="string">" 配色方案
-colo delek
-
-"</span> 关闭上侧工具栏
-set guioptions-=<span class="constant">T</span>
-
-<span class="string">" 开启右侧滚动条
-set guioptions-=L
-
-"</span> 开启自动缩进
-set autoindent
-
-<span class="string">" 加载工具栏
-filetype plugin on
-filetype plugin indent on
-filetype indent on
-
-"</span> 对其显示
-set list 
-set listchars=<span class="symbol">tab:</span>\|\ ,
-
-<span class="string">" 搜索忽略大小写
-set ignorecase
-
-"</span> ===============代码折叠设置===============
-set foldenable
-<span class="string">" 折叠位宽
-set foldcolumn=2
-
-"</span> ===============全能补全===============
-set completeopt=longest,menu
-
-<span class="string">" ===============MATLAB 支持===============
-"</span> 设置格式
-autocmd <span class="constant">BufNewFile</span>,<span class="constant">BufRead</span> *.m set filetype=matlab
-<span class="string">" 设置编码
-autocmd FileType matlab setlocal et sta fileencoding=gbk
-"</span> 设置字体
-autocmd <span class="constant">FileType</span> matlab set guifont=<span class="constant">Yahei</span>\ <span class="constant">Mono</span><span class="symbol">:h12</span>
-<span class="string">" 标志折叠
-autocmd FileType matlab set foldmethod=marker|set foldmarker=%%,%--END|set noexpandtab
-"</span> 注释一行
-<span class="input"><span class="prompt">autocmd FileType matlab map &lt;F10&gt;</span> <span class="constant">I</span>% &lt;<span class="constant">Esc</span>&gt;</span>
-</code></pre><p>对该配置文件的解释说明：</p>
-<ul>
-<li><p>注释一行代码，在Normal模式下，按下F10，会在改行代码开始处插入一个%，注释该行代码。</p>
-</li>
-<li><p>推荐折叠方式为标志折叠方式，起始位置为%%，结束位置为%—END，即例如有如下一段代码</p>
-<pre><code>  <span class="comment">%% 0 到 100 求和</span>
-  s = <span class="number">0</span>;
-  <span class="keyword">for</span> idx = <span class="number">1</span> : <span class="number">100</span>
-      s = s + <span class="number">1</span>;
-  <span class="keyword">end</span>
-  <span class="comment">%--END</span>
-</code></pre><p> 则当光标位于这一段代码位置时，在Normal模式下按下za便可折叠代码，如果代码是折叠的，按下za展开折叠。</p>
-</li>
-<li><p>Normal模式下，按下F10或者F11插入MATLAB运行断点。</p>
-</li>
-<li><p>Normal模式下，按下Tab切换缓冲区，按下Alt+数字键，便可切换到对应的缓冲区。</p>
-</li>
-<li><p>为了防止出现中文乱码，MATLAB文件的编码格式为gbk编码。</p>
-</li>
-<li><p>空格键翻页，Normal模式按下空格键翻页。</p>
-</li>
-<li><p>关闭子窗口，Normal模式下按下F4关闭窗口。</p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<!--行内公式采用\\(**\\)，行间公式 $$ *]]>
-    </summary>
-    
-      <category term="matlab" scheme="http://www.chenpengdsp.com/tags/matlab/"/>
-    
-      <category term="vim" scheme="http://www.chenpengdsp.com/tags/vim/"/>
-    
-      <category term="MATLAB" scheme="http://www.chenpengdsp.com/categories/MATLAB/"/>
-    
-  </entry>
   
-  <entry>
-    <title><![CDATA[使用 VIM 优雅地书写 LATEX 文档]]></title>
-    <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_18_04_LATEX_VIM/"/>
-    <id>http://www.chenpengdsp.com/2014/11/18/2014_11_18_04_LATEX_VIM/</id>
-    <published>2014-11-18T09:16:40.000Z</published>
-    <updated>2014-11-18T09:16:40.000Z</updated>
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签云</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/latex/" style="font-size: 10.00px;">latex</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/matlab/" style="font-size: 15.00px;">matlab</a><a href="/tags/vim/" style="font-size: 20.00px;">vim</a>
+    </div>
+  </div>
 
 
-<h2 id="LATEX_语言支持">LATEX 语言支持</h2>
-<h3 id="VIM_插件推荐">VIM 插件推荐</h3>
-<p>为了完善VIM的功能，我们将介绍几个插件，包括Ctags, WinManager, pathogen, EasyMotion, Tabular。</p>
-<h3 id="使用方法">使用方法</h3>
-<h2 id="完善你的编辑器">完善你的编辑器</h2>
-]]></content>
-    <summary type="html">
-    <![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            <a href="http://chenpengdsp.blog.163.com" target="_blank" title="我的163博客">我的163博客</a>
+          </li>
+        
+    </ul>
+</div>
 
-<!--行内公式采用\\(**\\)，行间公式 $$ *]]>
-    </summary>
-    
-      <category term="latex" scheme="http://www.chenpengdsp.com/tags/latex/"/>
-    
-      <category term="vim" scheme="http://www.chenpengdsp.com/tags/vim/"/>
-    
-      <category term="LATEX" scheme="http://www.chenpengdsp.com/categories/LATEX/"/>
-    
-  </entry>
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
   
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_17_01_hello_world/"/>
-    <id>http://www.chenpengdsp.com/2014/11/18/2014_11_17_01_hello_world/</id>
-    <published>2014-11-18T05:09:04.000Z</published>
-    <updated>2014-11-18T05:09:04.000Z</updated>
-    <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">归档</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">6</span></li></ul>
+  </div>
 
-<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=1917001683&verifier=7c6fbf1f&dpc=1"></iframe>
+</div>
 
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> Hello ,I&#39;m Peng Chen in SEU. <br/>
+			This is my blog, believe it or not.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/1917001683" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/chenpengdsp" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:chenpengdsp@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://zespia.tw/hexo/" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Pacman">Jacman</a> © 2014 
+		
+		<a href="http://www.chenpengdsp.com/about" target="_blank" title="Peng Chen">Peng Chen</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
 
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
 
-<p>Welcome to <a href="http:]]>
-    </summary>
-    
-  </entry>
-  
-</feed>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"chenpengdsp"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-56854632-1', 'chenpengdsp.com');  
+ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd4b1179d03691a3e3bdd456d9d784524' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+  </body>
+</html>
+
