@@ -806,7 +806,7 @@ header nav ul li a:hover {
 }
 @media only screen and (min-width: 1024px) {
   .archive-part {
-    width: 78% !important;
+    width: 73% !important;
     float: right;
     margin-left: 2% !important;
   }
