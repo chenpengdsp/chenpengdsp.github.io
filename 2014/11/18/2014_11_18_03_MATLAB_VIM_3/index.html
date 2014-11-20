@@ -102,94 +102,11 @@ Ctags 插件的安装过程请移步上一篇博客， Ctags 可以支持简单�
 <p>由于 VIM 的强大特性，使其可以适用于各种程序语言的书写，本文将设置 VIM 的配置，使其能够更好的支持 MATLAB 语言。</p>
 <h2 id="设置_Ctags_的_MATLAB_支持">设置 Ctags 的 MATLAB 支持</h2>
 <p>Ctags 插件的安装过程请移步上一篇博客， Ctags 可以支持简单的 MATLAB 代码的书写，但是最新的 MATLAB 版本已经支持了面向对象的编程方法，即类（class），Ctags 插件并不能很好的胜任面向对象的 MATLAB 函数间的跳转，所以我对 Ctags 插件进行了配置，并自定义了 MATLAB 语言的标签（tags）搜索方式。将以下代码复制到 VIM 的配置文件_vimrc中即可</p>
-<pre><code>" 设置matlab语言的ctags
-autocmd FileType matlab map &lt;F8&gt; :!Ctags --langdef=matlab --langmap=matlab.m --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*<span class="command">\\</span><span class="special">[</span>.*<span class="command">\\</span><span class="special">]</span><span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*=<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)/\1/f,function/" --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*=<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)/\1/f,function/" --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)<span class="special">[</span>^=<span class="special">]</span>*<span class="formula">$/\1/f,function/" --regex-matlab="/^.*<span class="command">\s*</span>function<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span>=<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\(</span>.*$</span>/\2/f,function/" --regex-matlab="/^.*<span class="command">\s*</span>function<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\(</span>.*<span class="formula">$/\1/f,function/" --languages=matlab --extra=+q --excmd=pattern -R .&lt;CR&gt;:call EditTagFile()&lt;CR&gt;
-" 编辑Tag文件
-function EditTagFile()
-    exe ':e tags'
-    for lineNum in range(line('^'), line('$</span>'))
-        " 得到每一行的内容
-        let lineStr = getline(lineNum)
-        if matchstr(lineStr, '^!') == ""
-            let fileName = matchstr(lineStr, '<span class="command">\v</span><span class="command">\\</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)<span class="command">\ze</span>(<span class="command">\.</span>m)')
-            let tagName = matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\zs</span>(<span class="command">\S*</span>)<span class="command">\ze</span>(<span class="command">\t</span>)')
-            if fileName != tagName
-                let newLineStr = fileName.'.'.lineStr
-                call setline(lineNum, newLineStr)
-            endif
-        else
-            if matchstr(lineStr, '^!_TAG_FILE_SORTED') != ""
-                let startStr = matchstr(lineStr,'<span class="command">\v</span><span class="command">\zs</span>(^)<span class="command">\S*</span><span class="command">\ze</span>(<span class="command">\t</span>)')
-                let endStr = matchstr(lineStr, '<span class="command">\v</span><span class="command">\d</span><span class="command">\t</span><span class="command">\zs</span>(.*)<span class="command">\ze</span>(<span class="formula">$)')
-                let newLineStr = startStr."<span class="command">\t</span>"."0"."<span class="command">\t</span>".endStr
-                call setline(lineNum, newLineStr)
-            endif
-        endif
-    endfor
-    exe ':w'
-    exe ':bdelete tags'
-endfunction
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div></pre></td><td class="code"><pre><div class="line">" 设置matlab语言的ctags</div><div class="line">autocmd FileType matlab map &lt;F8&gt; :!Ctags --langdef=matlab --langmap=matlab.m --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*<span class="command">\\</span><span class="special">[</span>.*<span class="command">\\</span><span class="special">]</span><span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*=<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)/\1/f,function/" --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*=<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)/\1/f,function/" --regex-matlab="/^function<span class="special">[</span> <span class="command">\t</span><span class="special">]</span>*(<span class="special">[</span>a-zA-Z0-9_<span class="special">]</span>+)<span class="special">[</span>^=<span class="special">]</span>*<span class="formula">$/\1/f,function/" --regex-matlab="/^.*<span class="command">\s*</span>function<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span>=<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\(</span>.*$</span>/\2/f,function/" --regex-matlab="/^.*<span class="command">\s*</span>function<span class="command">\s*</span>(<span class="command">\w</span>+)<span class="command">\s*</span><span class="command">\(</span>.*<span class="formula">$/\1/f,function/" --languages=matlab --extra=+q --excmd=pattern -R .&lt;CR&gt;:call EditTagFile()&lt;CR&gt;</span></div><div class="line">" 编辑Tag文件</div><div class="line">function EditTagFile()</div><div class="line">    exe ':e tags'</div><div class="line">    for lineNum in range(line('^'), line('$'))</div><div class="line">        " 得到每一行的内容</div><div class="line">        let lineStr = getline(lineNum)</div><div class="line">        if matchstr(lineStr, '^!') == ""</div><div class="line">            let fileName = matchstr(lineStr, '<span class="command">\v</span><span class="command">\\</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)<span class="command">\ze</span>(<span class="command">\.</span>m)')</div><div class="line">            let tagName = matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\zs</span>(<span class="command">\S*</span>)<span class="command">\ze</span>(<span class="command">\t</span>)')</div><div class="line">            if fileName != tagName</div><div class="line">                let newLineStr = fileName.'.'.lineStr</div><div class="line">                call setline(lineNum, newLineStr)</div><div class="line">            endif</div><div class="line">        else</div><div class="line">            if matchstr(lineStr, '^!_TAG_FILE_SORTED') != ""</div><div class="line">                let startStr = matchstr(lineStr,'<span class="command">\v</span><span class="command">\zs</span>(^)<span class="command">\S*</span><span class="command">\ze</span>(<span class="command">\t</span>)')</div><div class="line">                let endStr = matchstr(lineStr, '<span class="command">\v</span><span class="command">\d</span><span class="command">\t</span><span class="command">\zs</span>(.*)<span class="command">\ze</span>(<span class="formula">$)')</span></div><div class="line">                let newLineStr = startStr."<span class="command">\t</span>"."0"."<span class="command">\t</span>".endStr</div><div class="line">                call setline(lineNum, newLineStr)</div><div class="line">            endif</div><div class="line">        endif</div><div class="line">    endfor</div><div class="line">    exe ':w'</div><div class="line">    exe ':bdelete tags'</div><div class="line">endfunction</div><div class="line"></div><div class="line">autocmd FileType matlab map &lt;C-<span class="special">]</span>&gt; :call MyFindTag() &lt;CR&gt;zRz.</div><div class="line">" 搜索tag</div><div class="line">function MyFindTag()</div><div class="line">    let tagFullName = expand("&lt;cWORD&gt;")</div><div class="line">    if matchstr(tagFullName, '<span class="command">\v</span><span class="command">\(</span>') != ""</div><div class="line">        let tagFullName = matchstr(tagFullName, '<span class="command">\v</span>(<span class="command">\w</span>|_|<span class="command">\.</span>)*<span class="command">\ze</span>(<span class="command">\(</span>)')</div><div class="line">    end</div><div class="line">    let tagName = expand("&lt;cword&gt;")</div><div class="line">    if tagName == tagFullName</div><div class="line">        " 是否已在函数定义位置</div><div class="line">        let lineStrTemp = getline('.')</div><div class="line">        if matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>(function)<span class="command">\ze</span>(<span class="command">\s</span>)') != ""</div><div class="line">            return</div><div class="line">        else</div><div class="line">            exe ':ta '.tagName</div><div class="line">        endif</div><div class="line">    else</div><div class="line">        let objName = matchstr(tagFullName, '<span class="command">\v</span><span class="command">\zs</span>(.*)<span class="command">\ze</span>(<span class="command">\.</span>)')</div><div class="line">        let funcName = matchstr(tagFullName, '<span class="command">\v</span><span class="command">\.</span><span class="command">\zs</span>(<span class="command">\w</span>+)')</div><div class="line">        " 类中定义的子函数</div><div class="line">        if objName == "obj"</div><div class="line">            for lineNumTemp in range(line('^'), line('$'))</div><div class="line">                let lineStrTemp = getline(lineNumTemp)</div><div class="line">                if matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>(classdef)<span class="command">\ze</span>(<span class="command">\s</span>)') != ""</div><div class="line">                    let className = matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span>classdef<span class="command">\s*</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)')</div><div class="line">                    " exe ':tag '.tagName</div><div class="line">                    break</div><div class="line">                endif</div><div class="line">            endfor</div><div class="line">        else</div><div class="line">            " 得到类的定义函数</div><div class="line">            let endLineNum = line('.')</div><div class="line">            while 1</div><div class="line">                let isFindName = 0</div><div class="line">                exe ':echo '.isFindName</div><div class="line">                for lineNum in range(line('^'), endLineNum - 1)</div><div class="line">                    " 得到每一行的内容</div><div class="line">                    let lineStr = getline(lineNum)</div><div class="line">                    if matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>('.objName.')<span class="command">\s*</span><span class="command">\=</span>') != ""</div><div class="line">                        if matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>('.objName.')<span class="command">\s*</span><span class="command">\=</span><span class="command">\s*</span>'.objName.'<span class="command">\.</span>') == ""</div><div class="line">                            " 得到类名字</div><div class="line">                            let objName = matchstr(lineStr, '<span class="command">\v</span><span class="command">\=</span><span class="command">\s*</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)<span class="command">\ze</span>(<span class="command">\(</span>|;)')</div><div class="line">                            let endLineNum = lineNum</div><div class="line">                            let isFindName = 1</div><div class="line">                            break</div><div class="line">                        end</div><div class="line">                    endif</div><div class="line">                endfor</div><div class="line">                if isFindName == 0 || endLineNum &lt;= 0</div><div class="line">                    let className = objName</div><div class="line">                    break</div><div class="line">                endif</div><div class="line">            endwhile</div><div class="line">        endif</div><div class="line">        " 得到要搜索的tag的名字</div><div class="line">        let tagName = className.'.'.funcName</div><div class="line">        exe ':tag '.tagName</div><div class="line">    endif</div><div class="line">endfunction</div></pre></td></tr></table></figure>
 
-autocmd FileType matlab map &lt;C-<span class="special">]</span>&gt; :call MyFindTag() &lt;CR&gt;zRz.
-" 搜索tag
-function MyFindTag()
-    let tagFullName = expand("&lt;cWORD&gt;")
-    if matchstr(tagFullName, '<span class="command">\v</span><span class="command">\(</span>') != ""
-        let tagFullName = matchstr(tagFullName, '<span class="command">\v</span>(<span class="command">\w</span>|_|<span class="command">\.</span>)*<span class="command">\ze</span>(<span class="command">\(</span>)')
-    end
-    let tagName = expand("&lt;cword&gt;")
-    if tagName == tagFullName
-        " 是否已在函数定义位置
-        let lineStrTemp = getline('.')
-        if matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>(function)<span class="command">\ze</span>(<span class="command">\s</span>)') != ""
-            return
-        else
-            exe ':ta '.tagName
-        endif
-    else
-        let objName = matchstr(tagFullName, '<span class="command">\v</span><span class="command">\zs</span>(.*)<span class="command">\ze</span>(<span class="command">\.</span>)')
-        let funcName = matchstr(tagFullName, '<span class="command">\v</span><span class="command">\.</span><span class="command">\zs</span>(<span class="command">\w</span>+)')
-        " 类中定义的子函数
-        if objName == "obj"
-            for lineNumTemp in range(line('^'), line('$</span>'))
-                let lineStrTemp = getline(lineNumTemp)
-                if matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>(classdef)<span class="command">\ze</span>(<span class="command">\s</span>)') != ""
-                    let className = matchstr(lineStrTemp, '<span class="command">\v</span>^<span class="command">\s*</span>classdef<span class="command">\s*</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)')
-                    " exe ':tag '.tagName
-                    break
-                endif
-            endfor
-        else
-            " 得到类的定义函数
-            let endLineNum = line('.')
-            while 1
-                let isFindName = 0
-                exe ':echo '.isFindName
-                for lineNum in range(line('^'), endLineNum - 1)
-                    " 得到每一行的内容
-                    let lineStr = getline(lineNum)
-                    if matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>('.objName.')<span class="command">\s*</span><span class="command">\=</span>') != ""
-                        if matchstr(lineStr, '<span class="command">\v</span>^<span class="command">\s*</span><span class="command">\zs</span>('.objName.')<span class="command">\s*</span><span class="command">\=</span><span class="command">\s*</span>'.objName.'<span class="command">\.</span>') == ""
-                            " 得到类名字
-                            let objName = matchstr(lineStr, '<span class="command">\v</span><span class="command">\=</span><span class="command">\s*</span><span class="command">\zs</span>((<span class="command">\w</span>|_)*)<span class="command">\ze</span>(<span class="command">\(</span>|;)')
-                            let endLineNum = lineNum
-                            let isFindName = 1
-                            break
-                        end
-                    endif
-                endfor
-                if isFindName == 0 || endLineNum &lt;= 0
-                    let className = objName
-                    break
-                endif
-            endwhile
-        endif
-        " 得到要搜索的tag的名字
-        let tagName = className.'.'.funcName
-        exe ':tag '.tagName
-    endif
-endfunction
-</code></pre><h2 id="设置_Snippet_的_MATLAB_支持">设置 Snippet 的 MATLAB 支持</h2>
+<h2 id="设置_Snippet_的_MATLAB_支持">设置 Snippet 的 MATLAB 支持</h2>
+<hr>
+<p>版权所有，转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -274,6 +191,8 @@ endfunction
 	<p class="asidetitle">分类</p>
 		<ul>
 		
+			<li><a href="/categories/Chrome/" title="Chrome">Chrome<sup>1</sup></a></li>
+		
 			<li><a href="/categories/LATEX/" title="LATEX">LATEX<sup>1</sup></a></li>
 		
 			<li><a href="/categories/MATLAB/" title="MATLAB">MATLAB<sup>3</sup></a></li>
@@ -288,7 +207,7 @@ endfunction
   <div class="tagcloudlist">
     <p class="asidetitle">标签云</p>
     <div class="tagcloudlist clearfix">
-       <a href="/tags/latex/" style="font-size: 10.00px;">latex</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/matlab/" style="font-size: 15.00px;">matlab</a><a href="/tags/vim/" style="font-size: 20.00px;">vim</a>
+       <a href="/tags/chrome/" style="font-size: 10.00px;">chrome</a><a href="/tags/latex/" style="font-size: 10.00px;">latex</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/matlab/" style="font-size: 15.00px;">matlab</a><a href="/tags/vim/" style="font-size: 20.00px;">vim</a><a href="/tags/vimum/" style="font-size: 10.00px;">vimum</a>
     </div>
   </div>
 
@@ -299,11 +218,11 @@ endfunction
         <div class="categorieslist">
                 <ul>
                 
+                    <li><a href="/2014/11/18/2014_11_18_03_MATLAB_VIM_3/" title="undefined">使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持</a></li>
+                
                     <li><a href="/2014/11/19/2014_11_18_02_MATLAB_VIM_2/" title="undefined">使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件</a></li>
                 
-                    <li><a href="/2014/11/18/2014_11_18_01_MATLAB_VIM_1/" title="undefined">使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用</a></li>
-                
-                    <li><a href="/2014/11/18/2014_11_17_01_hello_world/" title="undefined">Hello World</a></li>
+                    <li><a href="/2014/11/18/2014_11_18_04_LATEX_VIM/" title="undefined">使用 VIM 优雅地书写 LATEX 文档</a></li>
                 
                 </ul>
         </div>
@@ -314,7 +233,7 @@ endfunction
   
   <div class="archiveslist">
     <p class="asidetitle"><a href="/archives">归档</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li></ul>
   </div>
 
 

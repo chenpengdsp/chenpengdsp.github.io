@@ -4,13 +4,14 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>使用 VIM 优雅地书写 LATEX 文档 | Peng 的博客</title>
+    <title>Chrome 插件 Vimum 推荐 | Peng 的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Peng Chen">
     
-    <meta name="description" content="LATEX 语言支持
-123456789101112131415161718192021222324252627282930313233343536373839404142434445&quot; ===============拼写检查===============set nocp&quot; 字典设置let g:cv">
+    <meta name="description" content="Chrome 插件 Vimum
+
+版权所有，转载请注明出处 Peng的博客（http://chenpengdsp.com ）。">
     
     
     
@@ -71,14 +72,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/11/18/2014_11_18_04_LATEX_VIM/" title="使用 VIM 优雅地书写 LATEX 文档" itemprop="url">使用 VIM 优雅地书写 LATEX 文档</a>
+      <a href="/2014/11/20/2014_11_20_01_Chrome_Vimum/" title="Chrome 插件 Vimum 推荐" itemprop="url">Chrome 插件 Vimum 推荐</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://www.chenpengdsp.com/about" title="Peng Chen" target="_blank" itemprop="author">Peng Chen</a>
 		
   <p class="article-time">
-    <time datetime="2014-11-18T00:30:16.000Z" itemprop="datePublished"> 发表于 2014-11-18</time>
+    <time datetime="2014-11-20T02:30:16.000Z" itemprop="datePublished"> 发表于 2014-11-20</time>
     
   </p>
 </header>
@@ -88,22 +89,11 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LATEX_语言支持"><span class="toc-number">1.</span> <span class="toc-text">LATEX 语言支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">2.</span> <span class="toc-text">VIM 插件推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">3.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完善你的编辑器"><span class="toc-number">4.</span> <span class="toc-text">完善你的编辑器</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome_插件_Vimum"><span class="toc-number">1.</span> <span class="toc-text">Chrome 插件 Vimum</span></a></li></ol>
 		
 		</div>
 		
-		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
-
-<!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
-
-
-<h2 id="LATEX_语言支持">LATEX 语言支持</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="string">" ===============拼写检查===============</span></div><div class="line">set nocp</div><div class="line">" 字典设置</div><div class="line"><span class="keyword">let</span> g:<span class="variable">cvimsyn=</span>'D:\Vim\vimfiles\CVIMSYN'</div><div class="line"><span class="keyword">let</span> g:<span class="variable">spchkautonext=</span> <span class="number">1</span></div><div class="line"><span class="keyword">let</span> g:<span class="variable">spchkdialect =</span> <span class="string">"usa"</span> </div><div class="line"></div><div class="line"><span class="string">" ===============LATEX支持===============</span></div><div class="line">" 设置格式</div><div class="line">autocmd BufNewFile,BufRead *.tex set <span class="variable">filetype=</span>tex</div><div class="line"><span class="string">" 设置编码</span></div><div class="line">autocmd FileType tex setlocal et sta fileencoding=utf-8</div><div class="line">" 设置字体</div><div class="line">autocmd FileType tex set <span class="variable">guifont=</span>Yahei\ Mono:h16</div><div class="line"><span class="string">" 设置设置拼写检查</span></div><div class="line">autocmd BufNewFile,BufRead *.tex set spell</div><div class="line">set shellslash</div><div class="line">set grepprg=grep\ -nH\ $*</div><div class="line">" 编译与查看设置</div><div class="line"><span class="keyword">let</span> g:<span class="variable">tex_flavor=</span>'latex'</div><div class="line"><span class="keyword">let</span> g:<span class="variable">Tex_DefaultTargetFormat =</span> 'pdf'</div><div class="line"><span class="keyword">let</span> g:<span class="variable">Tex_ViewRule_pdf =</span> 'SumatraPDF -reuse-instance -inverse-search <span class="string">"gvim -c \"</span>:RemoteOpen +\%l \%f\<span class="string">""</span>' </div><div class="line"><span class="keyword">let</span> g:<span class="variable">Tex_CompileRule_pdf =</span> 'pdflatex <span class="variable">--synctex=</span>-<span class="number">1</span> -src-specials <span class="variable">-interaction=</span>nonstopmode $*'</div><div class="line"><span class="string">" let g:Tex_CompileRule_pdf = 'xelatex --synctex=-1 -src-specials -interaction=nonstopmode $*'</span></div><div class="line">" 设置多次编译 以包含参考文献</div><div class="line"><span class="keyword">let</span> g:<span class="variable">Tex_MultipleCompileFormats =</span> 'dvi,pdf'</div><div class="line"><span class="string">" 自动换行设置</span></div><div class="line">let g:tex_indent_items=0</div><div class="line">" 不进行符号的转义显示</div><div class="line"><span class="keyword">let</span> g:<span class="variable">tex_conceal=</span><span class="string">''</span></div><div class="line">" TIP: if you write your \label's as \label{fig:something}, then if you type in \ref{fig: and press &lt;C-n&gt; you will automatically cycle through all the figure labels. Very useful!</div><div class="line">set iskeyword+=:</div><div class="line">" 禁用宏</div><div class="line">" let g:Imap_FreezeImap=1</div><div class="line">" &lt;F2&gt;编译</div><div class="line">autocmd FileType tex nmap &lt;F2&gt; \ll|imap &lt;F2&gt; &lt;ESC&gt;:w&lt;CR&gt;\ll|vmap &lt;F2&gt; &lt;ESC&gt;:w&lt;CR&gt;\ll</div><div class="line">" &lt;F3&gt;查看</div><div class="line">autocmd FileType tex nmap &lt;F3&gt; &lt;ESC&gt;\lv|imap &lt;F3&gt; &lt;ESC&gt;\lv|vmap &lt;F3&gt; &lt;ESC&gt;\lv</div><div class="line">" &lt;C-b&gt; 黑体</div><div class="line">autocmd FileType tex imap &lt;C-B&gt; bf&lt;Tab&gt;</div><div class="line">" 自动补全neocomplcache</div><div class="line">autocmd FileType tex let g:neocomplcache_enable_at_startup = 1</div><div class="line">" 自动补全字典设置</div><div class="line">autocmd FileType tex setlocal dictionary+=D:\Vim\vimfiles\dict\english.dict</div><div class="line">autocmd FileType tex setlocal complete+=k</div></pre></td></tr></table></figure>
-
-<h2 id="VIM_插件推荐">VIM 插件推荐</h2>
-<p>为了完善VIM的功能，我们将介绍几个插件，包括Ctags, WinManager, pathogen, EasyMotion, Tabular。</p>
-<h2 id="使用方法">使用方法</h2>
-<h2 id="完善你的编辑器">完善你的编辑器</h2>
+		<h2 id="Chrome_插件_Vimum">Chrome 插件 Vimum</h2>
 <hr>
 <p>版权所有，转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
   
@@ -113,13 +103,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/LATEX/">LATEX</a>
+  <a class="article-category-link" href="/categories/Chrome/">Chrome</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/latex/">latex</a><a href="/tags/vim/">vim</a>
+  <span></span> <a href="/tags/chrome/">chrome</a><a href="/tags/vimum/">vimum</a>
   </div>
 
 </div>
@@ -127,7 +117,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://www.chenpengdsp.com/2014/11/18/2014_11_18_04_LATEX_VIM/" data-title="使用 VIM 优雅地书写 LATEX 文档 | Peng 的博客" data-tsina="1917001683" class="share clearfix">
+  <div data-url="http://www.chenpengdsp.com/2014/11/20/2014_11_20_01_Chrome_Vimum/" data-title="Chrome 插件 Vimum 推荐 | Peng 的博客" data-tsina="1917001683" class="share clearfix">
   </div>
 
 </div>
@@ -136,19 +126,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/11/18/2014_11_18_01_MATLAB_VIM_1/" title="使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用">
-  <strong>上一篇：</strong><br/>
-  <span>
-  使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/11/18/2014_11_17_01_hello_world/"  title="Hello World">
+<a href="/2014/11/19/2014_11_19_01_MARKDOWN/"  title="Markdown 语法说明 (简体中文版)">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>Markdown 语法说明 (简体中文版)
 </span>
 </a>
 </div>
@@ -173,7 +155,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#LATEX_语言支持"><span class="toc-number">1.</span> <span class="toc-text">LATEX 语言支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">2.</span> <span class="toc-text">VIM 插件推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">3.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完善你的编辑器"><span class="toc-number">4.</span> <span class="toc-text">完善你的编辑器</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome_插件_Vimum"><span class="toc-number">1.</span> <span class="toc-text">Chrome 插件 Vimum</span></a></li></ol>
  
   </div>
 
