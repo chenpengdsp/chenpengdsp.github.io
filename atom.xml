@@ -4,7 +4,7 @@
   <subtitle><![CDATA[我在这里]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.chenpengdsp.com/"/>
-  <updated>2014-11-19T13:31:33.859Z</updated>
+  <updated>2014-11-20T02:35:48.016Z</updated>
   <id>http://www.chenpengdsp.com/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[Markdown 语法说明 (简体中文版)]]></title>
     <link href="http://www.chenpengdsp.com/2014/11/19/2014_11_19_01_MARKDOWN/"/>
     <id>http://www.chenpengdsp.com/2014/11/19/2014_11_19_01_MARKDOWN/</id>
-    <published>2014-11-19T08:43:02.000Z</published>
-    <updated>2014-11-19T08:43:02.000Z</updated>
+    <published>2014-11-19T07:30:16.000Z</published>
+    <updated>2014-11-20T02:31:28.000Z</updated>
     <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 <!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
@@ -384,8 +384,8 @@
     <title><![CDATA[使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件]]></title>
     <link href="http://www.chenpengdsp.com/2014/11/19/2014_11_18_02_MATLAB_VIM_2/"/>
     <id>http://www.chenpengdsp.com/2014/11/19/2014_11_18_02_MATLAB_VIM_2/</id>
-    <published>2014-11-18T16:35:47.000Z</published>
-    <updated>2014-11-18T16:35:47.000Z</updated>
+    <published>2014-11-19T02:30:16.000Z</published>
+    <updated>2014-11-20T02:33:07.000Z</updated>
     <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 <!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
@@ -537,8 +537,8 @@ vmap t, :Tabularize /,\zs&lt;CR&gt;</span>
     <title><![CDATA[使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持]]></title>
     <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_18_03_MATLAB_VIM_3/"/>
     <id>http://www.chenpengdsp.com/2014/11/18/2014_11_18_03_MATLAB_VIM_3/</id>
-    <published>2014-11-18T15:48:35.000Z</published>
-    <updated>2014-11-18T15:48:35.000Z</updated>
+    <published>2014-11-18T07:30:16.000Z</published>
+    <updated>2014-11-20T02:33:33.000Z</updated>
     <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 <!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
@@ -654,8 +654,8 @@ endfunction
     <title><![CDATA[使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用]]></title>
     <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_18_01_MATLAB_VIM_1/"/>
     <id>http://www.chenpengdsp.com/2014/11/18/2014_11_18_01_MATLAB_VIM_1/</id>
-    <published>2014-11-18T09:17:00.000Z</published>
-    <updated>2014-11-18T09:17:00.000Z</updated>
+    <published>2014-11-18T02:30:16.000Z</published>
+    <updated>2014-11-20T02:34:05.000Z</updated>
     <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 <!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
@@ -1003,8 +1003,8 @@ autocmd FileType matlab set foldmethod=marker|set foldmarker=%%,%--END|set noexp
     <title><![CDATA[使用 VIM 优雅地书写 LATEX 文档]]></title>
     <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_18_04_LATEX_VIM/"/>
     <id>http://www.chenpengdsp.com/2014/11/18/2014_11_18_04_LATEX_VIM/</id>
-    <published>2014-11-18T09:16:40.000Z</published>
-    <updated>2014-11-18T09:16:40.000Z</updated>
+    <published>2014-11-18T00:30:16.000Z</published>
+    <updated>2014-11-20T02:34:26.000Z</updated>
     <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 <!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
@@ -1034,8 +1034,8 @@ autocmd FileType matlab set foldmethod=marker|set foldmarker=%%,%--END|set noexp
     <title><![CDATA[Hello World]]></title>
     <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_17_01_hello_world/"/>
     <id>http://www.chenpengdsp.com/2014/11/18/2014_11_17_01_hello_world/</id>
-    <published>2014-11-18T05:09:04.000Z</published>
-    <updated>2014-11-18T05:09:04.000Z</updated>
+    <published>2014-11-17T17:30:16.000Z</published>
+    <updated>2014-11-20T02:34:52.000Z</updated>
     <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
