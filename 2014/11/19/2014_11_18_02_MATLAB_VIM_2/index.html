@@ -92,7 +92,7 @@ Ctags 插件的作用
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">1.</span> <span class="toc-text">VIM 插件推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ctags_插件"><span class="toc-number">1.1.</span> <span class="toc-text">Ctags 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinManager_插件"><span class="toc-number">1.2.</span> <span class="toc-text">WinManager 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pathogen_插件"><span class="toc-number">1.3.</span> <span class="toc-text">pathogen 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EasyMotion_插件"><span class="toc-number">1.4.</span> <span class="toc-text">EasyMotion 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tabular_插件"><span class="toc-number">1.5.</span> <span class="toc-text">Tabular 插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Snippet_插件"><span class="toc-number">2.</span> <span class="toc-text">Snippet 插件</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">1.</span> <span class="toc-text">VIM 插件推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ctags_插件"><span class="toc-number">1.1.</span> <span class="toc-text">Ctags 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NERDTree_插件"><span class="toc-number">1.2.</span> <span class="toc-text">NERDTree 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinManager_插件"><span class="toc-number">1.3.</span> <span class="toc-text">WinManager 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pathogen_插件"><span class="toc-number">1.4.</span> <span class="toc-text">pathogen 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EasyMotion_插件"><span class="toc-number">1.5.</span> <span class="toc-text">EasyMotion 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tabular_插件"><span class="toc-number">1.6.</span> <span class="toc-text">Tabular 插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Snippet_插件"><span class="toc-number">2.</span> <span class="toc-text">Snippet 插件</span></a></li></ol>
 		
 		</div>
 		
@@ -109,124 +109,162 @@ Ctags 插件的作用
 <p>  Ctags 插件实现了函数之间的跳转功能，即当我们在代码中调用某个函数时，如果我们想进入该函数的定义位置，便可采用Ctags插件实现。</p>
 </li>
 <li><p>Ctags 插件的安装</p>
-<p>  到官方网站（<a href="http://ctags.sourceforge.net/" target="_blank" rel="external">http://ctags.sourceforge.net/</a> ）下载Ctags，选择“Source and binary for Windows 98/NT/2000/XP”版本，解压缩下载的文件，将ctags.exe文件放到 D:\Vim\vim74\ 文件夹中即可。</p>
-<p>  将以下代码加入到VIM配置文件中：</p>
-<pre><code>  " ===============Ctags===============
-  " 生成Ctags <span class="tag">&lt;<span class="title">F8</span>&gt;</span>
-  map <span class="tag">&lt;<span class="title">F8</span>&gt;</span> :!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span>
-  imap <span class="tag">&lt;<span class="title">F8</span>&gt;</span> <span class="tag">&lt;<span class="title">ESC</span>&gt;</span>:!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span>
-  set tags=tags;
-</code></pre></li>
-<li><p>Ctags 插件的使用说明：</p>
-<ul>
-<li><p>Ctags 的工作依靠于tags文件，在Normal模式下，按下F8生成Tags文件。</p>
+<ol>
+<li><p>到官方网站（<a href="http://ctags.sourceforge.net/" target="_blank" rel="external">http://ctags.sourceforge.net/</a> ）下载Ctags，选择“Source and binary for Windows 98/NT/2000/XP”版本，解压缩下载的文件，将ctags.exe文件放到 D:\Vim\vim74\ 文件夹中即可。</p>
 </li>
-<li><p>在函数名位置处按下Ctrl+]，进入该函数的定义位置。按下 Ctrl+T 返回。</p>
+<li><p>将以下代码加入到VIM配置文件(_vimrc) 中：</p>
+</li>
+</ol>
 </li>
 </ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">" ===============Ctags===============</div><div class="line">" 生成Ctags <span class="tag">&lt;<span class="title">F8</span>&gt;</span></div><div class="line">map <span class="tag">&lt;<span class="title">F8</span>&gt;</span> :!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span></div><div class="line">imap <span class="tag">&lt;<span class="title">F8</span>&gt;</span> <span class="tag">&lt;<span class="title">ESC</span>&gt;</span>:!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span></div><div class="line">set tags=tags;</div></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Ctags 插件的使用说明：</p>
+<ol>
+<li><p>Ctags 的工作依靠于tags文件，在Normal模式下，按下 <code>F8</code> 生成Tags文件。</p>
+</li>
+<li><p>在函数名位置处按下 <code>Ctrl+]</code>，进入该函数的定义位置。按下 <code>Ctrl+T</code> 返回。</p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="NERDTree_插件">NERDTree 插件</h3>
+<ul>
+<li><p>NERDTree 插件的作用</p>
+<p>  NERDTree 插件配合 WinManager 插件，可以在 VIM 中显示文件浏览页面，从而实现在 VIM 浏览文件夹下不同文件，并切换编辑的功能</p>
+</li>
+<li><p>NERDTree 插件的安装</p>
+<ol>
+<li><p>请到 VIM 的官方网站 <a href="http://www.vim.org/scripts/script.php?script_id=1658" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=1658</a> 下载 <a href="http://www.vim.org/scripts/download_script.php?src_id=17123" target="_blank" rel="external">NERDTree</a>。</p>
+</li>
+<li><p>解压下载的压缩包 <a href="http://www.vim.org/scripts/download_script.php?src_id=17123" target="_blank" rel="external">nerdtree.zip</a>，并将所有的文件复制到 D:\Vim\vimfiles\ 目录下。</p>
+</li>
+</ol>
 </li>
 </ul>
 <h3 id="WinManager_插件">WinManager 插件</h3>
 <ul>
-<li>WinManager 插件的作用</li>
+<li><p>WinManager 插件的作用</p>
+<p>  WinManager 插件的作用是在 VIM 编辑器的侧边显示文件目录以及缓冲区目录，装有 WinManager 插件的 VIM 外观如下图所示：</p>
+<p>  <img src="http://chenpengdsp.qiniudn.com/2014_11_18_02_MATLAB_VIM_2_MW.JPG" alt="WinManager 插件的 VIM 外观"></p>
+<p>  我们可以在 VIM 中直接浏览文件目标，并进入相应的文件中，而且对于打开多个缓冲区的情况，WinManager 插件也会显示以及打开的缓冲区，便于切换多个文件的缓冲区。</p>
+</li>
+<li><p>WinManager 插件的安装</p>
+<ol>
+<li><p>请到 VIM 的官方网站 <a href="http://www.vim.org/scripts/script.php?script_id=95" target="_blank" rel="external">http://www.vim.org/scripts/script.php?script_id=95</a> 下载 <a href="http://www.vim.org/scripts/download_script.php?src_id=754" target="_blank" rel="external">WinManager</a>。</p>
+</li>
+<li><p>解压下载的压缩包 <a href="http://www.vim.org/scripts/download_script.php?src_id=754" target="_blank" rel="external">winmanager.zip</a>，并将所有的文件复制到 D:\Vim\vimfiles\ 目录下。</p>
+</li>
+<li><p>将以下代码加入到VIM配置文件(_vimrc) 中：</p>
+</li>
+</ol>
+</li>
 </ul>
-<p>WinManager 插件的 VIM 外观如下图所示：</p>
-<p><img src="http://chenpengdsp.qiniudn.com/2014_11_18_02_MATLAB_VIM_2_MW.JPG" alt="WinManager 插件的 VIM 外观"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="string">" ===============WinManager设置===============</span></div><div class="line">nmap mw :WMToggle&lt;cr&gt;</div><div class="line">let g:winManagerWindowLayout='NERDTree|BufExplorer'</div><div class="line">" 缓冲区切换，在<span class="constant">Normal</span>模式下按下<span class="constant">Tab</span>键即可切换缓冲区，按下<span class="constant">Alt</span>+数字键，便可切换到对应的缓冲区</div><div class="line"><span class="input"><span class="prompt">nmap &lt;Tab&gt;</span> &lt;<span class="constant">C</span>-^&gt;</span></div><div class="line">nmap &lt;<span class="constant">S</span>-<span class="constant">Tab</span>&gt; <span class="symbol">:bnext&lt;CR&gt;</span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-1&gt;</span> <span class="symbol">:b1&lt;CR&gt;</span></span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-2&gt;</span> <span class="symbol">:b2&lt;CR&gt;</span></span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-3&gt;</span> <span class="symbol">:b3&lt;CR&gt;</span></span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-4&gt;</span> <span class="symbol">:b4&lt;CR&gt;</span></span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-5&gt;</span> <span class="symbol">:b5&lt;CR&gt;</span></span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-6&gt;</span> <span class="symbol">:b6&lt;CR&gt;</span></span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-7&gt;</span> <span class="symbol">:b7&lt;CR&gt;</span></span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-8&gt;</span> <span class="symbol">:b8&lt;CR&gt;</span></span></div><div class="line"><span class="input"><span class="prompt">nmap &lt;A-9&gt;</span> <span class="symbol">:b9&lt;CR&gt;</span></span></div></pre></td></tr></table></figure>
+
+<ul>
+<li><p>WinManager 插件的使用说明：</p>
+<ol>
+<li><p>在 Normal 模式下，按下 <code>mw</code>，便可以打开以及关闭 WinManager 窗口。</p>
+</li>
+<li><p>在 Normal 模式下，按下 <code>&lt;Tab&gt;</code>键，便可以切换缓冲区。</p>
+</li>
+<li><p>在 Normal 模式下，按下 <code>&lt;Alt&gt;+numb</code>键，便可以切换到对应编号的缓冲区，例如<code>&lt;Alt&gt;+2</code> 切换到2号缓冲区。</p>
+</li>
+</ol>
+</li>
+</ul>
 <h3 id="pathogen_插件">pathogen 插件</h3>
 <h3 id="EasyMotion_插件">EasyMotion 插件</h3>
 <h3 id="Tabular_插件">Tabular 插件</h3>
 <p>在配置文件中加入如下代码：</p>
-<pre><code><span class="string">" ===============WinManager设置===============
-nmap mw :WMToggle&lt;cr&gt;
-let g:winManagerWindowLayout='NERDTree|BufExplorer'
+<pre><code><span class="string">" ===============pathogen 支持===============
+execute pathogen#infect()
 
 
-"</span> <span class="subst">===============</span>pathogen 支持<span class="subst">===============</span>
-execute pathogen<span class="variable">#infect</span>()
-
-
-<span class="string">" ===============拼写检查===============
+"</span> ===============拼写检查===============
 set nocp
-"</span> 字典设置
-<span class="keyword">let</span> g:cvimsyn<span class="subst">=</span><span class="string">'D:\Vim\vimfiles\CVIMSYN'</span>
-<span class="keyword">let</span> g:spchkautonext<span class="subst">=</span> <span class="number">1</span>
-<span class="keyword">let</span> g:spchkdialect <span class="subst">=</span> <span class="string">"usa"</span> 
+<span class="string">" 字典设置
+let g:cvimsyn='D:\Vim\vimfiles\CVIMSYN'
+let g:spchkautonext= 1
+let g:spchkdialect = "</span>usa<span class="string">" 
 
-<span class="string">" ===============LATEX支持===============
-"</span> 设置格式
-autocmd BufNewFile,BufRead <span class="subst">*</span><span class="built_in">.</span>tex <span class="built_in">set</span> filetype<span class="subst">=</span>tex
-<span class="string">" 设置编码
-autocmd FileType tex setlocal et sta fileencoding=utf-8
-"</span> 设置字体
-autocmd FileType tex <span class="built_in">set</span> guifont<span class="subst">=</span>Yahei<span class="subst">\</span> Mono:h16
-<span class="string">" 设置设置拼写检查
+"</span> ===============LATEX支持===============
+<span class="string">" 设置格式
+autocmd BufNewFile,BufRead *.tex set filetype=tex
+"</span> 设置编码
+autocmd FileType tex setlocal et sta <span class="variable">fileencoding=</span>utf-<span class="number">8</span>
+<span class="string">" 设置字体
+autocmd FileType tex set guifont=Yahei\ Mono:h16
+"</span> 设置设置拼写检查
 autocmd BufNewFile,BufRead *.tex set spell
 set shellslash
-set grepprg=grep\ -nH\ $*
-"</span> 编译与查看设置
-<span class="keyword">let</span> g:tex_flavor<span class="subst">=</span><span class="string">'latex'</span>
-<span class="keyword">let</span> g:Tex_DefaultTargetFormat <span class="subst">=</span> <span class="string">'pdf'</span>
-<span class="keyword">let</span> g:Tex_ViewRule_pdf <span class="subst">=</span> <span class="string">'SumatraPDF -reuse-instance -inverse-search "gvim -c \":RemoteOpen +\%l \%f\""'</span> 
-<span class="keyword">let</span> g:Tex_CompileRule_pdf <span class="subst">=</span> <span class="string">'pdflatex --synctex=-1 -src-specials -interaction=nonstopmode $*'</span>
-<span class="string">" let g:Tex_CompileRule_pdf = 'xelatex --synctex=-1 -src-specials -interaction=nonstopmode $*'
-"</span> 设置多次编译 以包含参考文献
-<span class="keyword">let</span> g:Tex_MultipleCompileFormats <span class="subst">=</span> <span class="string">'dvi,pdf'</span>
-<span class="string">" 自动换行设置
-let g:tex_indent_items=0
-"</span> 不进行符号的转义显示
-<span class="keyword">let</span> g:tex_conceal<span class="subst">=</span><span class="string">''</span>
-<span class="string">" TIP: if you write your \label's as \label{fig:something}, then if you type in \ref{fig: and press &lt;C-n&gt; you will automatically cycle through all the figure labels. Very useful!
+set <span class="variable">grepprg=</span>grep\ -nH\ $*
+<span class="string">" 编译与查看设置
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_ViewRule_pdf = 'SumatraPDF -reuse-instance -inverse-search "</span>gvim -c \<span class="string">":RemoteOpen +\%l \%f\"</span><span class="string">"' 
+let g:Tex_CompileRule_pdf = 'pdflatex --synctex=-1 -src-specials -interaction=nonstopmode $*'
+"</span> <span class="keyword">let</span> g:<span class="variable">Tex_CompileRule_pdf =</span> 'xelatex <span class="variable">--synctex=</span>-<span class="number">1</span> -src-specials <span class="variable">-interaction=</span>nonstopmode $*'
+<span class="string">" 设置多次编译 以包含参考文献
+let g:Tex_MultipleCompileFormats = 'dvi,pdf'
+"</span> 自动换行设置
+<span class="keyword">let</span> g:<span class="variable">tex_indent_items=</span><span class="number">0</span>
+<span class="string">" 不进行符号的转义显示
+let g:tex_conceal=''
+"</span> TIP: <span class="keyword">if</span> you write your \label's as \label{fig:something}, <span class="keyword">then</span> <span class="keyword">if</span> you type <span class="keyword">in</span> \ref{fig: <span class="constant">and</span> press &lt;C-n&gt; you will automatically cycle through all the figure labels. Very useful!
 set iskeyword+=:
-"</span> 禁用宏
-<span class="string">" let g:Imap_FreezeImap=1
-"</span> <span class="subst">&lt;</span>F2<span class="subst">&gt;</span>编译
-autocmd FileType tex nmap <span class="subst">&lt;</span>F2<span class="subst">&gt;</span> <span class="subst">\</span>ll<span class="subst">|</span>imap <span class="subst">&lt;</span>F2<span class="subst">&gt;</span> <span class="subst">&lt;</span>ESC<span class="subst">&gt;</span>:w<span class="subst">&lt;</span>CR<span class="subst">&gt;\</span>ll<span class="subst">|</span>vmap <span class="subst">&lt;</span>F2<span class="subst">&gt;</span> <span class="subst">&lt;</span>ESC<span class="subst">&gt;</span>:w<span class="subst">&lt;</span>CR<span class="subst">&gt;\</span>ll
-<span class="string">" &lt;F3&gt;查看
+<span class="string">" 禁用宏
+"</span> <span class="keyword">let</span> g:<span class="variable">Imap_FreezeImap=</span><span class="number">1</span>
+<span class="string">" &lt;F2&gt;编译
+autocmd FileType tex nmap &lt;F2&gt; \ll|imap &lt;F2&gt; &lt;ESC&gt;:w&lt;CR&gt;\ll|vmap &lt;F2&gt; &lt;ESC&gt;:w&lt;CR&gt;\ll
+"</span> &lt;F3&gt;查看
 autocmd FileType tex nmap &lt;F3&gt; &lt;ESC&gt;\lv|imap &lt;F3&gt; &lt;ESC&gt;\lv|vmap &lt;F3&gt; &lt;ESC&gt;\lv
-"</span> <span class="subst">&lt;</span>C<span class="attribute">-b</span><span class="subst">&gt;</span> 黑体
-autocmd FileType tex imap <span class="subst">&lt;</span>C<span class="attribute">-B</span><span class="subst">&gt;</span> bf<span class="subst">&lt;</span>Tab<span class="subst">&gt;</span>
-<span class="string">" 自动补全neocomplcache
-autocmd FileType tex let g:neocomplcache_enable_at_startup = 1
-"</span> 自动补全字典设置
-autocmd FileType tex setlocal dictionary<span class="subst">+=</span>D:<span class="subst">\</span>Vim<span class="subst">\</span>vimfiles<span class="subst">\</span>dict<span class="subst">\</span>english<span class="built_in">.</span>dict
-autocmd FileType tex setlocal complete<span class="subst">+=</span>k 
+<span class="string">" &lt;C-b&gt; 黑体
+autocmd FileType tex imap &lt;C-B&gt; bf&lt;Tab&gt;
+"</span> 自动补全neocomplcache
+autocmd FileType tex <span class="keyword">let</span> g:<span class="variable">neocomplcache_enable_at_startup =</span> <span class="number">1</span>
+<span class="string">" 自动补全字典设置
+autocmd FileType tex setlocal dictionary+=D:\Vim\vimfiles\dict\english.dict
+autocmd FileType tex setlocal complete+=k 
 
-<span class="string">" ===============Markdown===============
-"</span> 设置格式
-autocmd BufNewFile,BufRead <span class="subst">*</span><span class="built_in">.</span>{md,mdown,mkd,mkdn,markdown,mdwn} <span class="built_in">set</span> filetype<span class="subst">=</span>mkd
+"</span> ===============<span class="variable">Markdown=</span>==============
+<span class="string">" 设置格式
+autocmd BufNewFile,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=mkd
 
-<span class="string">" ===============TXT===============
-"</span> 设置格式
-autocmd BufNewFile,BufRead <span class="subst">*</span><span class="built_in">.</span>{txt} <span class="built_in">set</span> filetype<span class="subst">=</span>txt
-autocmd FileType txt <span class="built_in">set</span> wrap
+"</span> ===============<span class="variable">TXT=</span>==============
+<span class="string">" 设置格式
+autocmd BufNewFile,BufRead *.{txt} set filetype=txt
+autocmd FileType txt set wrap
 
-<span class="string">" ===============EasyMotion===============
-let g:EasyMotion_do_mapping = 0 "</span> Disable default mappings
-<span class="string">" Bi-directional find motion
-"</span> Jump <span class="keyword">to</span> anywhere you want <span class="keyword">with</span> <span class="literal">minimal</span> keystrokes, <span class="keyword">with</span> just one key binding<span class="built_in">.</span>
-<span class="string">" `s{char}{label}`
+"</span> ===============<span class="variable">EasyMotion=</span>==============
+<span class="keyword">let</span> g:<span class="variable">EasyMotion_do_mapping =</span> <span class="number">0</span> <span class="string">" Disable default mappings
+"</span> Bi-directional find motion
+<span class="string">" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+"</span> `s{char}{label}`
 nmap s &lt;Plug&gt;(easymotion-s)
-"</span> <span class="literal">or</span>
-<span class="string">" `s{char}{char}{label}`
-"</span> Need one more keystroke, but <span class="keyword">on</span> <span class="keyword">average</span>, it may be more comfortable<span class="built_in">.</span>
-nmap s <span class="subst">&lt;</span>Plug<span class="subst">&gt;</span>(easymotion<span class="attribute">-s2</span>)
-<span class="string">" Turn on case sensitive feature
-let g:EasyMotion_smartcase = 1
-"</span> JK motions: Line motions
-<span class="built_in">map</span> <span class="subst">&lt;</span>Leader<span class="subst">&gt;</span>j <span class="subst">&lt;</span>Plug<span class="subst">&gt;</span>(easymotion<span class="attribute">-j</span>)
-<span class="built_in">map</span> <span class="subst">&lt;</span>Leader<span class="subst">&gt;</span>k <span class="subst">&lt;</span>Plug<span class="subst">&gt;</span>(easymotion<span class="attribute">-k</span>)
+<span class="string">" or
+"</span> `s{char}{char}{label}`
+<span class="string">" Need one more keystroke, but on average, it may be more comfortable.
+nmap s &lt;Plug&gt;(easymotion-s2)
+"</span> Turn on case sensitive feature
+<span class="keyword">let</span> g:<span class="variable">EasyMotion_smartcase =</span> <span class="number">1</span>
+<span class="string">" JK motions: Line motions
+map &lt;Leader&gt;j &lt;Plug&gt;(easymotion-j)
+map &lt;Leader&gt;k &lt;Plug&gt;(easymotion-k)
 
-<span class="string">" ===============格式化文本===============
-"</span> Tabular
-<span class="string">" 以等号对其
-nmap t= :Tabularize /=&lt;CR&gt;
-vmap t= :Tabularize /=&lt;CR&gt;
-"</span> 对其分号之后的部分
-nmap t: :Tabularize <span class="subst">/</span>:<span class="subst">\</span>zs<span class="subst">&lt;</span>CR<span class="subst">&gt;</span>
-vmap t: :Tabularize <span class="subst">/</span>:<span class="subst">\</span>zs<span class="subst">&lt;</span>CR<span class="subst">&gt;</span>
-<span class="string">" 对其逗号之后的部分
+"</span> ===============格式化文本===============
+<span class="string">" Tabular
+"</span> 以等号对其
+nmap <span class="variable">t=</span> :Tabularize /=&lt;CR&gt;
+vmap <span class="variable">t=</span> :Tabularize /=&lt;CR&gt;
+<span class="string">" 对其分号之后的部分
+nmap t: :Tabularize /:\zs&lt;CR&gt;
+vmap t: :Tabularize /:\zs&lt;CR&gt;
+"</span> 对其逗号之后的部分
 nmap t, :Tabularize /,\zs&lt;CR&gt;
-vmap t, :Tabularize /,\zs&lt;CR&gt;</span>
+vmap t, :Tabularize /,\zs&lt;CR&gt;
 </code></pre><h2 id="Snippet_插件">Snippet 插件</h2>
   
 	</div>
@@ -295,7 +333,7 @@ vmap t, :Tabularize /,\zs&lt;CR&gt;</span>
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">1.</span> <span class="toc-text">VIM 插件推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ctags_插件"><span class="toc-number">1.1.</span> <span class="toc-text">Ctags 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinManager_插件"><span class="toc-number">1.2.</span> <span class="toc-text">WinManager 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pathogen_插件"><span class="toc-number">1.3.</span> <span class="toc-text">pathogen 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EasyMotion_插件"><span class="toc-number">1.4.</span> <span class="toc-text">EasyMotion 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tabular_插件"><span class="toc-number">1.5.</span> <span class="toc-text">Tabular 插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Snippet_插件"><span class="toc-number">2.</span> <span class="toc-text">Snippet 插件</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">1.</span> <span class="toc-text">VIM 插件推荐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ctags_插件"><span class="toc-number">1.1.</span> <span class="toc-text">Ctags 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NERDTree_插件"><span class="toc-number">1.2.</span> <span class="toc-text">NERDTree 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WinManager_插件"><span class="toc-number">1.3.</span> <span class="toc-text">WinManager 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pathogen_插件"><span class="toc-number">1.4.</span> <span class="toc-text">pathogen 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EasyMotion_插件"><span class="toc-number">1.5.</span> <span class="toc-text">EasyMotion 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Tabular_插件"><span class="toc-number">1.6.</span> <span class="toc-text">Tabular 插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Snippet_插件"><span class="toc-number">2.</span> <span class="toc-text">Snippet 插件</span></a></li></ol>
  
   </div>
 
@@ -337,11 +375,11 @@ vmap t, :Tabularize /,\zs&lt;CR&gt;</span>
         <div class="categorieslist">
                 <ul>
                 
-                    <li><a href="/2014/11/18/2014_11_17_01_hello_world/" title="undefined">Hello World</a></li>
-                
-                    <li><a href="/2014/11/18/2014_11_18_04_LATEX_VIM/" title="undefined">使用 VIM 优雅地书写 LATEX 文档</a></li>
+                    <li><a href="/2014/11/19/2014_11_18_02_MATLAB_VIM_2/" title="undefined">使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件</a></li>
                 
                     <li><a href="/2014/11/18/2014_11_18_01_MATLAB_VIM_1/" title="undefined">使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用</a></li>
+                
+                    <li><a href="/2014/11/18/2014_11_17_01_hello_world/" title="undefined">Hello World</a></li>
                 
                 </ul>
         </div>
