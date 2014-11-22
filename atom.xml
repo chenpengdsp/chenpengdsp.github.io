@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Peng 的博客]]></title>
-  <subtitle><![CDATA[我在这里]]></subtitle>
+  <subtitle><![CDATA[人生就是不停的战斗]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.chenpengdsp.com/"/>
-  <updated>2014-11-20T17:32:01.338Z</updated>
+  <updated>2014-11-22T08:08:03.841Z</updated>
   <id>http://www.chenpengdsp.com/</id>
   
   <author>
@@ -13,6 +13,55 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[MATLAB 2014a 下载]]></title>
+    <link href="http://www.chenpengdsp.com/2014/11/20/2014_11_21_01_MATLAB_Download/"/>
+    <id>http://www.chenpengdsp.com/2014/11/20/2014_11_21_01_MATLAB_Download/</id>
+    <published>2014-11-20T02:30:16.000Z</published>
+    <updated>2014-11-21T03:40:58.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="MATLAB_2014a_下载">MATLAB 2014a 下载</h2>
+<p>MATLAB 2014a 下载地址：<a href="http://yunpan.cn/cASLLqBW5NeJG" target="_blank" rel="external">http://yunpan.cn/cASLLqBW5NeJG</a>  提取码 b35c</p>
+<h2 id="MATLAB_安装">MATLAB 安装</h2>
+<p>以下内容是为初次安装Matlab的新手提供，老手请直接跳过，或者可以参见serial文件夹中的Readme文件。另外，请注意，在中文系统中通过以下方法安装的Matlab的默认界面语言为中文，如果不希望安装中文界面的，请在安装前将系统语言更改为英文（或者也可以按照文后附的方法修改）。</p>
+<ol>
+<li><p>将下下来的ISO文件载入到虚拟光驱（可以使用Daemon Tools或UltraISO等，注意，用UltraISO双击打开是不行的）或解压，你能看到如下文件：<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/01.png-pengblog" alt="Fig1"></p>
+</li>
+<li><p>最简单的办法是直接双击SetupSimple，静待安装完成，Over。如果该方法不行的话，那么，请按照下面的步骤进行。</p>
+</li>
+<li><p>如果第二步的方法不行，那么，双击Setup，选择“使用文件安装密钥”；<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/02.png-pengblog" alt="Fig2"></p>
+</li>
+<li><p>填入序列号（单机安装填：12313-94680-65562-90832，如果你需要Matlab服务器组件的话，那么请填写：23809-31321-26556-08694，一般个人使用的话是不需要这些组件的）<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/03.png-pengblog" alt="Fig3"></p>
+</li>
+<li><p>选择安装位置，选择安装组件，选择安装的快捷方式<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/04.png-pengblog" alt="Fig4"><br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/05.png-pengblog" alt="Fig5"></p>
+<p> (在上一步中，如果你使用了23809-31321-26556-08694安装密钥，那么会多框出来的这两个组件)<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/06.png-pengblog" alt="Fig6"><br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/07.png-pengblog" alt="Fig7"><br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/08.png-pengblog" alt="Fig8"></p>
+</li>
+<li><p>然后等待安装完成<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/09.png-pengblog" alt="Fig9"><br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/10.png-pengblog" alt="Fig10"></p>
+</li>
+<li><p>最后，它会问你是否要激活Matlab，可以不勾选，等到首次运行时再激活，也可以勾选。如果勾选了，请参考第10步。<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/11.png-pengblog" alt="Fig11"></p>
+</li>
+<li><p>然后我们需要替换破解过的文件，进入serial文件夹（它在ISO文件内，如第1步所示，你把ISO文件解压或载入虚拟光驱就能看到了），选择与你系统版本对应的破解文件（32位系统打开Matlab32，64位系统打开Matlab64），复制里面的bin文件夹。<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/12.png-pengblog" alt="Fig12"></p>
+</li>
+<li><p>然后转到你的Matlab安装目录，右击，粘贴，它会弹出合并文件夹的对话框，全部都选是，还会弹出替换文件的对话框，为所有文件选择复制和替换。<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/13.png-pengblog" alt="Fig13"></p>
+</li>
+<li><p>激活时，选择“不使用Internet手动激活”<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/14.png-pengblog" alt="Fig14"></p>
+</li>
+<li><p>选择第1步中所示的serial文件夹中的license.lic文件，选择下一步，激活就完成了。<br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/15.png-pengblog" alt="Fig15"><br><img src="http://chenpengdsp.qiniudn.com/2014_11_21_01_MATLAB_Download/16.png-pengblog" alt="Fig16"></p>
+</li>
+</ol>
+<hr>
+<p>版权所有，转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="MATLAB_2014a_下载">MATLAB 2014a 下载</h2>
+<p>MATLAB 2014a 下载地址：<a href="http://yunpan.cn/cASLLqBW5NeJG" target="_blank" rel="external">h]]>
+    </summary>
+    
+      <category term="matlab" scheme="http://www.chenpengdsp.com/tags/matlab/"/>
+    
+      <category term="软件下载" scheme="http://www.chenpengdsp.com/categories/%E8%BD%AF%E4%BB%B6%E4%B8%8B%E8%BD%BD/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Chrome 插件 Vimum 推荐]]></title>
@@ -431,7 +480,7 @@
 </ol>
 </li>
 </ul>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">" ===============Ctags===============</div><div class="line">" 生成Ctags <span class="tag">&lt;<span class="title">F8</span>&gt;</span></div><div class="line">map <span class="tag">&lt;<span class="title">F8</span>&gt;</span> :!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span></div><div class="line">imap <span class="tag">&lt;<span class="title">F8</span>&gt;</span> <span class="tag">&lt;<span class="title">ESC</span>&gt;</span>:!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span></div><div class="line">set tags=tags;</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="xml"><span class="tag">" =<span class="value">==============Ctags===============</span></span></span></div><div class="line">" 生成<span class="attribute">Ctags</span> &lt;<span class="attribute">F8</span>&gt;</div><div class="line">map <span class="tag">&lt;<span class="title">F8</span>&gt;</span> :!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span></div><div class="line">imap <span class="tag">&lt;<span class="title">F8</span>&gt;</span> <span class="tag">&lt;<span class="title">ESC</span>&gt;</span>:!Ctags -R .<span class="tag">&lt;<span class="title">CR</span>&gt;</span></div><div class="line">set tags=tags;</div></pre></td></tr></table></figure>
 
 <ul>
 <li><p>Ctags 插件的使用说明：</p>
@@ -593,12 +642,13 @@
     <link href="http://www.chenpengdsp.com/2014/11/18/2014_11_18_01_MATLAB_VIM_1/"/>
     <id>http://www.chenpengdsp.com/2014/11/18/2014_11_18_01_MATLAB_VIM_1/</id>
     <published>2014-11-18T02:30:16.000Z</published>
-    <updated>2014-11-20T16:11:39.000Z</updated>
+    <updated>2014-11-21T05:04:50.000Z</updated>
     <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 <!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
 
 <h2 id="摘要">摘要</h2>
+<p><a href="">查看本系列更多内容</a></p>
 <h2 id="前言">前言</h2>
 <p>如果你觉得MATLAB自带的编辑器对你而言足够了，那么请忽略本文，如果你想更高效的书写MATLAB程序，而且有足够的学习时间，可能要稀稀疏疏的把玩一周，你的代码书写会有质的飞跃。</p>
 <p>注意：本文所讨论的是Windows操作系统。</p>
