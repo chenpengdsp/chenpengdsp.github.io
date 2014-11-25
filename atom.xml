@@ -4,7 +4,7 @@
   <subtitle><![CDATA[人生就是不停的战斗]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chenpengdsp.com/"/>
-  <updated>2014-11-25T03:03:56.066Z</updated>
+  <updated>2014-11-25T03:35:27.909Z</updated>
   <id>http://chenpengdsp.com/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[使用 MATLAB 优雅地绘图]]></title>
+    <link href="http://chenpengdsp.com/2014/11/25/2014_11_25_01_MATLAB_PLOT/"/>
+    <id>http://chenpengdsp.com/2014/11/25/2014_11_25_01_MATLAB_PLOT/</id>
+    <published>2014-11-25T03:30:16.000Z</published>
+    <updated>2014-11-25T03:34:24.000Z</updated>
+    <content type="html"><![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
+
+<h2 id="前言">前言</h2>
+<p>使用 MATLAB 做通信仿真时，为了能够得到漂亮的图形，给大家一个模板做参考。</p>
+<h2 id="绘图代码">绘图代码</h2>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">% 数据</span></div><div class="line">x = <span class="matrix">[<span class="number">1</span> : <span class="number">10</span>]</span>;</div><div class="line">y1 = <span class="matrix">[<span class="number">1.0256</span>, <span class="number">1.0132</span>, <span class="number">0.6436</span>, <span class="number">0.6806</span>, <span class="number">0.6320</span>, <span class="number">0.8706</span>, <span class="number">0.6431</span>, <span class="number">0.8835</span>, <span class="number">0.3779</span>, <span class="number">0.0128</span>]</span>;</div><div class="line">y2 = <span class="matrix">[<span class="number">1.0256</span>, <span class="number">0.2680</span>, <span class="number">0.1346</span>, <span class="number">0.1089</span>, <span class="number">0.0858</span>, <span class="number">0.0569</span>, <span class="number">0.0488</span>, <span class="number">0.0292</span>, <span class="number">0.0312</span>, <span class="number">0.0003</span>]</span>;</div><div class="line">y3 = <span class="matrix">[<span class="number">1.0256</span>, <span class="number">0.1324</span>, <span class="number">0.1014</span>, <span class="number">0.0943</span>, <span class="number">0.0945</span>, <span class="number">0.0955</span>, <span class="number">0.0960</span>, <span class="number">0.0936</span>, <span class="number">0.0903</span>, <span class="number">0.0012</span>]</span>;</div><div class="line">y4 = <span class="matrix">[<span class="number">1.0256</span>, <span class="number">0.1009</span>, <span class="number">0.0478</span>, <span class="number">0.0382</span>, <span class="number">0.0319</span>, <span class="number">0.0227</span>, <span class="number">0.0210</span>, <span class="number">0.0211</span>, <span class="number">0.0208</span>, <span class="number">0.0001</span>]</span>;</div><div class="line"><span class="comment">% 绘图</span></div><div class="line">figure(<span class="string">'name'</span>, <span class="string">'MSE'</span>);</div><div class="line">semilogy(x, y1, <span class="string">'b-+'</span>, <span class="string">'LineWidth'</span>, <span class="number">2.6</span>, <span class="string">'MarkerSize'</span>, <span class="number">10</span>);</div><div class="line">hold on;</div><div class="line">semilogy(x, y2,<span class="string">'*-g'</span>, <span class="string">'LineWidth'</span>, <span class="number">2.6</span>, <span class="string">'MarkerSize'</span>, <span class="number">10</span>);</div><div class="line">hold on;</div><div class="line">semilogy(x, y3, <span class="string">'--s'</span>, <span class="string">'Color'</span>, <span class="matrix">[<span class="number">0.6</span>, <span class="number">0.2</span>, <span class="number">0</span>]</span>, <span class="string">'LineWidth'</span>, <span class="number">2.6</span>, <span class="string">'MarkerSize'</span>, <span class="number">10</span>);</div><div class="line">hold on;</div><div class="line">semilogy(x, y4, <span class="string">'r--o'</span>, <span class="string">'LineWidth'</span>, <span class="number">2.6</span>, <span class="string">'MarkerSize'</span>, <span class="number">10</span>);</div><div class="line">grid on;</div><div class="line">xlabelTitle = xlabel(<span class="string">'Iteration Index'</span>);</div><div class="line">ylabelTitle = ylabel(<span class="string">'Norimalized MSE'</span>);</div><div class="line">set(xlabelTitle, <span class="string">'FontSize'</span>, <span class="number">15</span>); set(ylabelTitle, <span class="string">'FontSize'</span>, <span class="number">15</span>); set(gca, <span class="string">'FontSize'</span>, <span class="number">15</span>);</div><div class="line">set(xlabelTitle, <span class="string">'FontName'</span>, <span class="string">'Times New Roman'</span>); set(ylabelTitle, <span class="string">'FontName'</span>, <span class="string">'Times New Roman'</span>);</div><div class="line">set(gca, <span class="string">'FontName'</span>, <span class="string">'Times New Roman'</span>);</div><div class="line"><span class="comment">% axis([1 10 0.01 0.12]);</span></div><div class="line">legend(<span class="string">'MAP Random Waveform'</span>, <span class="string">'Kalman Random Waveform'</span>, <span class="string">'Kalman Optimized Waveform (No Clutter)'</span>, <span class="string">'Kalman Optimized Waveform (Clutter)'</span>, <span class="number">1</span>);</div><div class="line">hold off;</div><div class="line">drawnow;</div></pre></td></tr></table></figure>
+
+<h2 id="绘图结果">绘图结果</h2>
+<p><img src="http://chenpengdsp.qiniudn.com/2014_11_25_01_MATLAB_PLOT/01.jpg-pengblog" alt="绘图结果"></p>
+<hr>
+<p>版权所有，转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+
+<!--行内公式采用\\(**\\)，行间公式 $$ *]]>
+    </summary>
+    
+      <category term="matlab" scheme="http://chenpengdsp.com/tags/matlab/"/>
+    
+      <category term="plot" scheme="http://chenpengdsp.com/tags/plot/"/>
+    
+      <category term="MATLAB" scheme="http://chenpengdsp.com/categories/MATLAB/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[MATLAB 2014a 下载]]></title>
