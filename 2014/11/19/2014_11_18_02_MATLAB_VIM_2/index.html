@@ -10,7 +10,14 @@
     <meta name="author" content="Peng Chen">
     
     <meta name="description" content="前言
-如果你觉得MATLAB自带的编辑器对你而言足够了，那么请忽略本文，如果你想更高效的书写MATLAB程序，而且有足够的学习时间，可能要稀稀疏疏的把玩一周，你的代码书写会有质的飞跃。 由于 VIM 的强大特性，使其可以适用于各种程序语言的书写，本系列将设置 VIM 的配置，使其能够更好的支持 MA">
+为了完善VIM的功能，本节我将介绍几个插件，包括Ctags, WinManager, pathogen, EasyMotion, Tabular，SnipMate。
+本系列一共包含以下内容：
+
+查看本系列更多内容：
+
+使用 VIM 优雅地书写 MATLAB 代码（1）— VIM 安装与使用
+
+">
     
     
     
@@ -89,7 +96,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">2.</span> <span class="toc-text">VIM 插件推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ctags_插件"><span class="toc-number">3.</span> <span class="toc-text">Ctags 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NERDTree_插件"><span class="toc-number">4.</span> <span class="toc-text">NERDTree 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WinManager_插件"><span class="toc-number">5.</span> <span class="toc-text">WinManager 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pathogen_插件"><span class="toc-number">6.</span> <span class="toc-text">pathogen 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EasyMotion_插件"><span class="toc-number">7.</span> <span class="toc-text">EasyMotion 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabular_插件"><span class="toc-number">8.</span> <span class="toc-text">Tabular 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SnipMate_插件"><span class="toc-number">9.</span> <span class="toc-text">SnipMate 插件</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ctags_插件"><span class="toc-number">2.</span> <span class="toc-text">Ctags 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NERDTree_插件"><span class="toc-number">3.</span> <span class="toc-text">NERDTree 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WinManager_插件"><span class="toc-number">4.</span> <span class="toc-text">WinManager 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pathogen_插件"><span class="toc-number">5.</span> <span class="toc-text">pathogen 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EasyMotion_插件"><span class="toc-number">6.</span> <span class="toc-text">EasyMotion 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabular_插件"><span class="toc-number">7.</span> <span class="toc-text">Tabular 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SnipMate_插件"><span class="toc-number">8.</span> <span class="toc-text">SnipMate 插件</span></a></li></ol>
 		
 		</div>
 		
@@ -99,7 +106,9 @@
 
 
 <h2 id="前言">前言</h2>
-<p>如果你觉得MATLAB自带的编辑器对你而言足够了，那么请忽略本文，如果你想更高效的书写MATLAB程序，而且有足够的学习时间，可能要稀稀疏疏的把玩一周，你的代码书写会有质的飞跃。 由于 VIM 的强大特性，使其可以适用于各种程序语言的书写，本系列将设置 VIM 的配置，使其能够更好的支持 MATLAB 语言。 本系列所讨论的是Windows操作系统。</p>
+<p>为了完善VIM的功能，本节我将介绍几个插件，包括Ctags, WinManager, pathogen, EasyMotion, Tabular，SnipMate。</p>
+<p>本系列一共包含以下内容：</p>
+<p><img src="http://chenpengdsp.qiniudn.com/2014_11_18_02_MATLAB_VIM_1/01.png-pengblog" alt="使用 VIM 优雅地书写 MATLAB 代码"></p>
 <p>查看本系列更多内容：</p>
 <ul>
 <li><p><a href="http://chenpengdsp.com/2014/11/18/2014_11_18_01_MATLAB_VIM_1/" target="_blank" rel="external">使用 VIM 优雅地书写 MATLAB 代码（1）— VIM 安装与使用</a></p>
@@ -113,8 +122,7 @@
 <ul>
 <li><a href="http://chenpengdsp.com/2014/11/20/2014_11_21_01_MATLAB_Download/" target="_blank" rel="external">http://chenpengdsp.com/2014/11/20/2014_11_21_01_MATLAB_Download/</a></li>
 </ul>
-<h2 id="VIM_插件推荐">VIM 插件推荐</h2>
-<p>为了完善VIM的功能，我将介绍几个插件，包括Ctags, WinManager, pathogen, EasyMotion, Tabular，SnipMate。</p>
+<hr>
 <h2 id="Ctags_插件">Ctags 插件</h2>
 <ul>
 <li><p>Ctags 插件的作用</p>
@@ -349,7 +357,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">2.</span> <span class="toc-text">VIM 插件推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ctags_插件"><span class="toc-number">3.</span> <span class="toc-text">Ctags 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NERDTree_插件"><span class="toc-number">4.</span> <span class="toc-text">NERDTree 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WinManager_插件"><span class="toc-number">5.</span> <span class="toc-text">WinManager 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pathogen_插件"><span class="toc-number">6.</span> <span class="toc-text">pathogen 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EasyMotion_插件"><span class="toc-number">7.</span> <span class="toc-text">EasyMotion 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabular_插件"><span class="toc-number">8.</span> <span class="toc-text">Tabular 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SnipMate_插件"><span class="toc-number">9.</span> <span class="toc-text">SnipMate 插件</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ctags_插件"><span class="toc-number">2.</span> <span class="toc-text">Ctags 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NERDTree_插件"><span class="toc-number">3.</span> <span class="toc-text">NERDTree 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WinManager_插件"><span class="toc-number">4.</span> <span class="toc-text">WinManager 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pathogen_插件"><span class="toc-number">5.</span> <span class="toc-text">pathogen 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EasyMotion_插件"><span class="toc-number">6.</span> <span class="toc-text">EasyMotion 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tabular_插件"><span class="toc-number">7.</span> <span class="toc-text">Tabular 插件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SnipMate_插件"><span class="toc-number">8.</span> <span class="toc-text">SnipMate 插件</span></a></li></ol>
  
   </div>
 
@@ -395,11 +403,11 @@
         <div class="categorieslist">
                 <ul>
                 
-                    <li><a href="/2014/11/20/2014_11_20_01_Chrome_Vimum/" title="undefined">Chrome 插件 Vimum 推荐</a></li>
-                
                     <li><a href="/2014/11/18/2014_11_18_03_MATLAB_VIM_3/" title="undefined">使用 VIM 优雅地书写 MATLAB 代码（3）-- MATLAB 语言支持</a></li>
                 
                     <li><a href="/2014/11/19/2014_11_18_02_MATLAB_VIM_2/" title="undefined">使用 VIM 优雅地书写 MATLAB 代码（2）-- VIM 插件</a></li>
+                
+                    <li><a href="/2014/11/18/2014_11_18_01_MATLAB_VIM_1/" title="undefined">使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用</a></li>
                 
                 </ul>
         </div>
