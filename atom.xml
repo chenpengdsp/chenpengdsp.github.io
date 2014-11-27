@@ -4,7 +4,7 @@
   <subtitle><![CDATA[人生就是不停的战斗]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://chenpengdsp.com/"/>
-  <updated>2014-11-25T13:45:37.866Z</updated>
+  <updated>2014-11-27T13:22:04.499Z</updated>
   <id>http://chenpengdsp.com/</id>
   
   <author>
@@ -13,6 +13,48 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[无法启动 Windows 8.1 的解决方法]]></title>
+    <link href="http://chenpengdsp.com/2014/11/27/2014_11_27_01_BOOT_BCD/"/>
+    <id>http://chenpengdsp.com/2014/11/27/2014_11_27_01_BOOT_BCD/</id>
+    <published>2014-11-27T13:16:16.000Z</published>
+    <updated>2014-11-27T13:21:14.000Z</updated>
+    <content type="html"><![CDATA[<p>Windows 8.1 系统中安装 Ubuntu 等双系统，或者手贱用 EasyBCD 删除了 Windows 的引导，而导致 Windows 系统无法启动，我们可以采用如下的方法解决：</p>
+<ol>
+<li><p>启动计算机，按下 <code>Enter</code>，或者采用U盘启动选择语言之后点击修复系统。</p>
+</li>
+<li><p>进入系统修复界面，选择“疑难解答”。</p>
+</li>
+<li><p>进一步选择“高级选项”。</p>
+</li>
+<li><p>点击“自动修复”，让 Windows 自动修复，如果无法修复成功，进入下一步。</p>
+</li>
+<li><p>在“高级选项”中选择“命令提示符”，在打开的命令提示符中，我们可以重写系统引导文件BCD，输入以下命令：</p>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bcdboot <span class="keyword">C</span>:\Windows</div></pre></td></tr></table></figure>
+
+<p>其中 <code>C:\Windows</code> 为系统盘位置。</p>
+<p>6. 重启计算机，就可重新进入 Windows 8.1 系统。</p>
+<hr>
+<p>版权所有，转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Windows 8.1 系统中安装 Ubuntu 等双系统，或者手贱用 EasyBCD 删除了 Windows 的引导，而导致 Windows 系统无法启动，我们可以采用如下的方法解决：</p>
+<ol>
+<li><p>启动计算机，按下 <code>Enter</code>]]>
+    </summary>
+    
+      <category term="Windows" scheme="http://chenpengdsp.com/tags/Windows/"/>
+    
+      <category term="boot" scheme="http://chenpengdsp.com/tags/boot/"/>
+    
+      <category term="BCD" scheme="http://chenpengdsp.com/tags/BCD/"/>
+    
+      <category term="Windows" scheme="http://chenpengdsp.com/categories/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[使用 MATLAB 优雅地绘图]]></title>

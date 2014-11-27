@@ -4,13 +4,16 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Chrome 插件 Vimum 推荐 | Peng 的博客</title>
+    <title>无法启动 Windows 8.1 的解决方法 | Peng 的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Peng Chen">
     
-    <meta name="description" content="Chrome 插件 Vimum 的介绍与安装
-各位 Vimer，现在存在一个 Chrome 插件 Vimum，可以将你的 Chrome 变成 VIM 一样的快捷操作。首先安装 Vimum，下载地址：https://chrome.google.com/webstore/detail/vimium/db">
+    <meta name="description" content="Windows 8.1 系统中安装 Ubuntu 等双系统，或者手贱用 EasyBCD 删除了 Windows 的引导，而导致 Windows 系统无法启动，我们可以采用如下的方法解决：
+
+启动计算机，按下 Enter，或者采用U盘启动选择语言之后点击修复系统。
+
+进入系统修复界面，选择“疑难解答”">
     
     
     
@@ -72,14 +75,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/11/20/2014_11_20_01_Chrome_Vimum/" title="Chrome 插件 Vimum 推荐" itemprop="url">Chrome 插件 Vimum 推荐</a>
+      <a href="/2014/11/27/2014_11_27_01_BOOT_BCD/" title="无法启动 Windows 8.1 的解决方法" itemprop="url">无法启动 Windows 8.1 的解决方法</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://chenpengdsp.com/about" title="Peng Chen" target="_blank" itemprop="author">Peng Chen</a>
 		
   <p class="article-time">
-    <time datetime="2014-11-20T02:30:16.000Z" itemprop="datePublished"> 发表于 2014-11-20</time>
+    <time datetime="2014-11-27T13:16:16.000Z" itemprop="datePublished"> 发表于 2014-11-27</time>
     
   </p>
 </header>
@@ -89,59 +92,27 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome_插件_Vimum_的介绍与安装"><span class="toc-number">1.</span> <span class="toc-text">Chrome 插件 Vimum 的介绍与安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome_插件_Vimum_的使用"><span class="toc-number">2.</span> <span class="toc-text">Chrome 插件 Vimum 的使用</span></a></li></ol>
+			
 		
 		</div>
 		
-		<h2 id="Chrome_插件_Vimum_的介绍与安装">Chrome 插件 Vimum 的介绍与安装</h2>
-<p>各位 Vimer，现在存在一个 Chrome 插件 Vimum，可以将你的 Chrome 变成 VIM 一样的快捷操作。首先安装 <a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb" target="_blank" rel="external">Vimum</a>，下载地址：<a href="https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb" target="_blank" rel="external">https://chrome.google.com/webstore/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb</a> ，安装完之后重启 Chrome。 </p>
-<h2 id="Chrome_插件_Vimum_的使用">Chrome 插件 Vimum 的使用</h2>
-<p>浏览网页的时候，键入<code>?</code>，便可得到帮助菜单，如下图：<br><img src="http://chenpengdsp.qiniudn.com/2014_11_20_01_Chrome_Vimum/01.JPG-pengblog" alt="Vimum 帮助"></p>
-<p>主要的快捷键操作有：</p>
-<ul>
-<li><p><code>&lt;Esc&gt;</code>： 如果快捷键不起作用，请<code>&lt;Esc&gt;</code></p>
+		<p>Windows 8.1 系统中安装 Ubuntu 等双系统，或者手贱用 EasyBCD 删除了 Windows 的引导，而导致 Windows 系统无法启动，我们可以采用如下的方法解决：</p>
+<ol>
+<li><p>启动计算机，按下 <code>Enter</code>，或者采用U盘启动选择语言之后点击修复系统。</p>
 </li>
-<li><p><code>f</code>： 在当前页面打开连接</p>
+<li><p>进入系统修复界面，选择“疑难解答”。</p>
 </li>
-<li><p><code>Shift + f</code>：在新页面打开连接</p>
+<li><p>进一步选择“高级选项”。</p>
 </li>
-<li><p><code>/</code>：搜索，不过只支持英文，<code>n</code>和<code>N</code>分别表示向下和向上搜索</p>
+<li><p>点击“自动修复”，让 Windows 自动修复，如果无法修复成功，进入下一步。</p>
 </li>
-<li><p><code>o</code>：在当前页面打开连接（智能补全历史记录以及标签等）</p>
+<li><p>在“高级选项”中选择“命令提示符”，在打开的命令提示符中，我们可以重写系统引导文件BCD，输入以下命令：</p>
 </li>
-<li><p><code>b</code>：在当前页面打开书签（需要输入书签名）</p>
-</li>
-<li><p><code>Shift+b</code>：在新页面打开书签（需要输入书签名）</p>
-</li>
-<li><p><code>Shift+h</code>：回退上一个历史页面（相当于浏览器中的向左箭头）</p>
-</li>
-<li><p><code>Shift+l</code>：回到下一个历史页面（相当于浏览器的向右箭头）</p>
-</li>
-<li><p><code>Shift+k</code>，<code>gt</code>：跳转到右边的一个标签页</p>
-</li>
-<li><p><code>Shift+j</code>，<code>g+Shift+t</code>：跳转到左边的一个标签页</p>
-</li>
-<li><p><code>t</code>：创建一个新的标签页</p>
-</li>
-<li><p><code>x</code>：关闭当前的标签页</p>
-</li>
-<li><p><code>Shift+x</code>：恢复刚刚关闭的标签页</p>
-</li>
-<li><p><code>d</code>：下翻页 </p>
-</li>
-<li><p><code>u</code>：上翻页 </p>
-</li>
-<li><p><code>gg</code>：移至页顶</p>
-</li>
-<li><p><code>Shift+g</code>：移至页底 </p>
-</li>
-<li><p><code>r</code>：刷新页面</p>
-</li>
-<li><p><code>j</code>、<code>k</code>、<code>h</code>、<code>l</code>：向下/上/左/右滚动 </p>
-</li>
-<li><p><code>zi</code> 和 <code>zo</code>：放大/缩小 </p>
-</li>
-</ul>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bcdboot <span class="keyword">C</span>:\Windows</div></pre></td></tr></table></figure>
+
+<p>其中 <code>C:\Windows</code> 为系统盘位置。</p>
+<p>6. 重启计算机，就可重新进入 Windows 8.1 系统。</p>
 <hr>
 <p>版权所有，转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
   
@@ -151,13 +122,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Chrome/">Chrome</a>
+  <a class="article-category-link" href="/categories/Windows/">Windows</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/chrome/">chrome</a><a href="/tags/vimum/">vimum</a><a href="/tags/vim/">vim</a>
+  <span></span> <a href="/tags/Windows/">Windows</a><a href="/tags/boot/">boot</a><a href="/tags/BCD/">BCD</a>
   </div>
 
 </div>
@@ -165,7 +136,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://chenpengdsp.com/2014/11/20/2014_11_20_01_Chrome_Vimum/" data-title="Chrome 插件 Vimum 推荐 | Peng 的博客" data-tsina="1917001683" class="share clearfix">
+  <div data-url="http://chenpengdsp.com/2014/11/27/2014_11_27_01_BOOT_BCD/" data-title="无法启动 Windows 8.1 的解决方法 | Peng 的博客" data-tsina="1917001683" class="share clearfix">
   </div>
 
 </div>
@@ -174,19 +145,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/11/20/2014_11_21_01_MATLAB_Download/" title="MATLAB 2014a 下载">
-  <strong>上一篇：</strong><br/>
-  <span>
-  MATLAB 2014a 下载</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/11/19/2014_11_19_01_MARKDOWN/"  title="Markdown 语法说明 (简体中文版)">
+<a href="/2014/11/25/2014_11_25_01_MATLAB_PLOT/"  title="使用 MATLAB 优雅地绘图">
  <strong>下一篇：</strong><br/> 
- <span>Markdown 语法说明 (简体中文版)
+ <span>使用 MATLAB 优雅地绘图
 </span>
 </a>
 </div>
@@ -211,7 +174,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome_插件_Vimum_的介绍与安装"><span class="toc-number">1.</span> <span class="toc-text">Chrome 插件 Vimum 的介绍与安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Chrome_插件_Vimum_的使用"><span class="toc-number">2.</span> <span class="toc-text">Chrome 插件 Vimum 的使用</span></a></li></ol>
+ 
  
   </div>
 
