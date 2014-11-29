@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | Peng 的博客</title>
+    <title>带通信号的带通与等效基带表示 | Peng 的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Peng Chen">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="信号的等效基带表示方法
+对于载频为 \(f_c\) 的实值窄带通带信号 \(s\left(t\right)\)，其频谱 \(S\left(f\right)\) 满足共轭对称性 \(S\left(f\right)=S^H\left(-f\right)\)，所以我们只需要一半的频谱分量便可以得到信号的所">
     
     
     
@@ -71,14 +72,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/11/18/2014_11_17_01_hello_world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2014/11/29/2014_11_29_01_Bandpass_and_Lowpass/" title="带通信号的带通与等效基带表示" itemprop="url">带通信号的带通与等效基带表示</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://chenpengdsp.com/about" title="Peng Chen" target="_blank" itemprop="author">Peng Chen</a>
 		
   <p class="article-time">
-    <time datetime="2014-11-17T17:30:16.000Z" itemprop="datePublished"> 发表于 2014-11-18</time>
+    <time datetime="2014-11-29T06:16:16.000Z" itemprop="datePublished"> 发表于 2014-11-29</time>
     
   </p>
 </header>
@@ -88,30 +89,19 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信号的等效基带表示方法"><span class="toc-number">1.</span> <span class="toc-text">信号的等效基带表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信道的等效基带表示"><span class="toc-number">2.</span> <span class="toc-text">信道的等效基带表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过信道后信号的等效基带表示"><span class="toc-number">3.</span> <span class="toc-text">通过信道后信号的等效基带表示</span></a></li></ol>
 		
 		</div>
 		
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h2 id="信号的等效基带表示方法">信号的等效基带表示方法</h2>
+<p>对于载频为 \(f_c\) 的实值窄带通带信号 \(s\left(t\right)\)，其频谱 \(S\left(f\right)\) 满足共轭对称性 \(S\left(f\right)=S^H\left(-f\right)\)，所以我们只需要一半的频谱分量便可以得到信号的所有信息，取正频率（\(f\geq 0\)）处的频谱，并将其表示为如下形式<br>$$<br>S^{+}\left(f\right)=2\mu\left(f\right)S\left(f\right),<br>$$<br>其中阶跃函数 \(\mu\left(f\right)\) 的定义为<br>$$<br>\mu\left(f\right)=<br>\begin{cases}<br>1, &amp; f\geq 0 \\<br>0, &amp; f&lt;0<br>\end{cases},<br>$$<br>将该带限通带信号的频谱 \(S^+\left(f\right)\) 搬移到基带，我们便可以定义基带信号频谱为<br>$$<br>S_B\left(f\right)= S^+\left(f+f_c\right),<br>$$<br>由于在整个频谱搬移过程中，没有丢失信息, 所以原始的带通信号 \(s\left(t\right)\) 可以等价的用频谱为 \(S_B\left(f\right)\)的低通信号表示, 这就是所谓的信号的<strong>等效基带表示</strong>, 该等效基带信号的时域形式可以通过逆傅里叶变换得到<br>$$<br>s_B\left(t\right) =\mathcal{F}^{-1}\left\{S_B\left(f\right)\right\}=\int  S^+\left(f\right)e^{j2\pi ft}e^{-j2\pi f_c t} df<br>$$<br>经过化简可以得到信号的时域等效基带表示为<br>$$<br>s_B\left(t\right) = \left(s\left(t\right)+j\frac{1}{\pi t}*s\left(t\right)\right) e^{-j2\pi f_c t},<br>$$<br>其中 \(*\) 表示卷积运算, 所示原始通带信号与其等效基带表示存在如下关系<br>$$<br>s\left(t\right)=\mathcal{Re}\left\{s_B\left(t\right)e^{j2\pi f_c t}\right\}.<br>$$</p>
+<h2 id="信道的等效基带表示">信道的等效基带表示</h2>
+<p>与信号的等效基带表示类似, 信道的冲击响应 \( h\left(t\right)\) 也存在其等效基带的表示方法, 由于 \(h\left(t\right)\) 为实信号, 所以其频谱满足共轭对称性<br>$$<br>H\left(f\right)=H^H\left(-f\right),<br>$$<br>取信号频谱的正频率部分 \(H^+\left(f\right) =\mu\left(f\right) H\left(f\right) \), 并对其做频谱搬移, 定义其基带频谱为<br>$$<br>H_B\left(f\right) = H^+\left(f+f_c\right)<br>$$<br>所以信道的等效基带表示的时域形式为<br>$$<br>h_B\left(t\right) =\mathcal{F}^{-1}\left\{H_B\left(f\right)\right\}=\int  H^+\left(f\right)e^{j2\pi ft}e^{-j2\pi f_c t} df<br>$$<br>经过化简可以得到信道的时域等效基带表示为<br>$$<br>h_B\left(t\right) = \frac{1}{2}\left(h\left(t\right)+j\frac{1}{\pi t}*h\left(t\right)\right) e^{-j2\pi f_c t},<br>$$<br>所示原始通带信号与其等效基带表示存在如下关系<br>$$<br>h\left(t\right)=2\mathcal{Re}\left\{h_B\left(t\right)e^{j2\pi f_c t}\right\}.<br>$$</p>
+<h2 id="通过信道后信号的等效基带表示">通过信道后信号的等效基带表示</h2>
+<p>在上面两个小节中我们已经知道了对于通带信号以及信道都存在与之一一对应的等效基带表示, 所示信号通过信道后得到的实信号 \(r\left(t\right)\) 也存在与之对应的等效基带表示\(r_B\left(t\right)\), 其中输出信号可以为卷积形式<br>$$<br>r\left(t\right) = \int s\left(\tau\right) h\left(t-\tau\right) d\tau,<br>$$<br>其相应的频域形式为<br>$$<br>R\left(f\right) = S\left(f\right)H\left(f\right).<br>$$</p>
+<p>由于 \(S\left(f\right)=\frac{1}{2}S^+\left(f\right)+\frac{1}{2}[S^+\left(-f\right)]^H\), \(H\left(f\right)=H^+\left(f\right)+[H^+\left(-f\right)]^H\), 所以我们有<br>$$<br>\begin{align}<br>R\left(f\right) &amp; =  S\left(f\right)H\left(f\right)=\frac{1}{2}S^+\left(f\right)H^+\left(f\right)+\frac{1}{2}S^+\left(f\right)[H^+\left(-f\right)]^H\\<br>&amp;+\frac{1}{2}[S^+\left(-f\right)]^HH^+\left(f\right)+\frac{1}{2}[S^+\left(-f\right)]^H[H^+\left(-f\right)]^H \\<br>&amp; = \frac{1}{2}S^+\left(f\right)H^+\left(f\right)+\frac{1}{2}[S^+\left(-f\right)]^H[H^+\left(-f\right)]^H\\<br>&amp; = \frac{1}{2}S_B\left(f-f_c\right)H_B\left(f-f_c\right)+\frac{1}{2}[S_B\left(f_c-f\right)]^H[H_B\left(f_c-f\right)]^H.<br>\end{align}<br>$$<br>定义 \(R_B\left(f\right)=S_B\left(f\right)H_B\left(f\right)\), 所以上式可以重写为<br>$$<br>R\left(f\right) = \frac{1}{2}R_B\left(f-f_c\right)+\frac{1}{2}R^H_B\left(f_c-f\right).<br>$$<br>同时对等式两边做傅里叶逆变换, 我们有<br>$$<br>r\left(t\right) = \frac{1}{2}[r_B\left(t\right)+r^H_B\left(t\right)]e^{j2\pi f_c t},<br>$$<br>其中 \(r_B\left(t\right)=\int R_B\left(f\right)e^{j2\pi ft} df \), 并且输出信号与其等效基带表示满足如下关系<br>$$<br>r\left(t\right)=\mathcal{Re}\left\{r_B\left(t\right)e^{j2\pi f_c t}\right\}.<br>$$</p>
 <hr>
 <p>版权所有，转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
   
@@ -119,13 +109,23 @@
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/信号处理/">信号处理</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/带通/">带通</a><a href="/tags/等效基带表示/">等效基带表示</a>
+  </div>
 
 </div>
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://chenpengdsp.com/2014/11/18/2014_11_17_01_hello_world/" data-title="Hello World | Peng 的博客" data-tsina="1917001683" class="share clearfix">
+  <div data-url="http://chenpengdsp.com/2014/11/29/2014_11_29_01_Bandpass_and_Lowpass/" data-title="带通信号的带通与等效基带表示 | Peng 的博客" data-tsina="1917001683" class="share clearfix">
   </div>
 
 </div>
@@ -134,14 +134,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/11/18/2014_11_18_04_LATEX_VIM/" title="使用 VIM 优雅地书写 LATEX 文档">
-  <strong>上一篇：</strong><br/>
-  <span>
-  使用 VIM 优雅地书写 LATEX 文档</span>
+
+<div class="next">
+<a href="/2014/11/27/2014_11_27_01_BOOT_BCD/"  title="无法启动 Windows 8.1 的解决方法">
+ <strong>下一篇：</strong><br/> 
+ <span>无法启动 Windows 8.1 的解决方法
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -163,7 +163,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信号的等效基带表示方法"><span class="toc-number">1.</span> <span class="toc-text">信号的等效基带表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信道的等效基带表示"><span class="toc-number">2.</span> <span class="toc-text">信道的等效基带表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过信道后信号的等效基带表示"><span class="toc-number">3.</span> <span class="toc-text">通过信道后信号的等效基带表示</span></a></li></ol>
  
   </div>
 
