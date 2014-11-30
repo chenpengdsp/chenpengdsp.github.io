@@ -4,18 +4,13 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>使用 VIM 优雅地书写 LATEX 文档 | Peng 的博客</title>
+    <title>TEST | Peng 的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Peng Chen">
     
-    <meta name="description" content="前言
-注： 
-
-已配置好的 VIM 下载链接： http://yunpan.cn/cAW64FBPNtykY  提取码 120d
-
-LATEX 语言支持
-1234567891011121314151617181920212223242526272829303132333435363738394041">
+    <meta name="description" content="信号的等效基带表示方法
+对于载频为 \(f_c\) 的实值窄带通带信号 \(s\left(t\right)\)，其频谱 \(S\left(f\right)\) 满足共轭对称性 \(S\left(f\right)=S^H\left(-f\right)\)，所以我们只需要一半的频谱分量便可以得到信号的所">
     
     
     
@@ -77,14 +72,14 @@ LATEX 语言支持
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/11/18/2014_11_18_04_LATEX_VIM/" title="使用 VIM 优雅地书写 LATEX 文档" itemprop="url">使用 VIM 优雅地书写 LATEX 文档</a>
+      <a href="/2014/11/29/test/" title="TEST" itemprop="url">TEST</a>
   </h1>
   <p class="article-author">By
        
 		<a href="http://chenpengdsp.com/about" title="Peng Chen" target="_blank" itemprop="author">Peng Chen</a>
 		
   <p class="article-time">
-    <time datetime="2014-11-18T00:30:16.000Z" itemprop="datePublished"> 发表于 2014-11-18</time>
+    <time datetime="2014-11-29T06:16:16.000Z" itemprop="datePublished"> 发表于 2014-11-29</time>
     
   </p>
 </header>
@@ -94,26 +89,19 @@ LATEX 语言支持
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LATEX_语言支持"><span class="toc-number">2.</span> <span class="toc-text">LATEX 语言支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">3.</span> <span class="toc-text">VIM 插件推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">4.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完善你的编辑器"><span class="toc-number">5.</span> <span class="toc-text">完善你的编辑器</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信号的等效基带表示方法"><span class="toc-number">1.</span> <span class="toc-text">信号的等效基带表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信道的等效基带表示"><span class="toc-number">2.</span> <span class="toc-text">信道的等效基带表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过信道后信号的等效基带表示"><span class="toc-number">3.</span> <span class="toc-text">通过信道后信号的等效基带表示</span></a></li></ol>
 		
 		</div>
 		
 		<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-<!--行内公式采用\\(**\\)，行间公式 $$ ** $$-->
-
-<h2 id="前言">前言</h2>
-<p>注： </p>
-<ul>
-<li>已配置好的 VIM 下载链接： <a href="http://yunpan.cn/cAW64FBPNtykY" target="_blank" rel="external">http://yunpan.cn/cAW64FBPNtykY</a>  提取码 120d</li>
-</ul>
-<h2 id="LATEX_语言支持">LATEX 语言支持</h2>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div></pre></td><td class="code"><pre><div class="line"><span class="string">" ===============拼写检查===============</span></div><div class="line">set nocp</div><div class="line">" 字典设置</div><div class="line"><span class="keyword">let</span> g:<span class="variable">cvimsyn=</span>'D:\Vim\vimfiles\CVIMSYN'</div><div class="line"><span class="keyword">let</span> g:<span class="variable">spchkautonext=</span> <span class="number">1</span></div><div class="line"><span class="keyword">let</span> g:<span class="variable">spchkdialect =</span> <span class="string">"usa"</span> </div><div class="line"></div><div class="line"><span class="string">" ===============LATEX支持===============</span></div><div class="line">" 设置格式</div><div class="line">autocmd BufNewFile,BufRead *.tex set <span class="variable">filetype=</span>tex</div><div class="line"><span class="string">" 设置编码</span></div><div class="line">autocmd FileType tex setlocal et sta fileencoding=utf-8</div><div class="line">" 设置字体</div><div class="line">autocmd FileType tex set <span class="variable">guifont=</span>Yahei\ Mono:h16</div><div class="line"><span class="string">" 设置设置拼写检查</span></div><div class="line">autocmd BufNewFile,BufRead *.tex set spell</div><div class="line">set shellslash</div><div class="line">set grepprg=grep\ -nH\ $*</div><div class="line">" 编译与查看设置</div><div class="line"><span class="keyword">let</span> g:<span class="variable">tex_flavor=</span>'latex'</div><div class="line"><span class="keyword">let</span> g:<span class="variable">Tex_DefaultTargetFormat =</span> 'pdf'</div><div class="line"><span class="keyword">let</span> g:<span class="variable">Tex_ViewRule_pdf =</span> 'SumatraPDF -reuse-instance -inverse-search <span class="string">"gvim -c \"</span>:RemoteOpen +\%l \%f\<span class="string">""</span>' </div><div class="line"><span class="keyword">let</span> g:<span class="variable">Tex_CompileRule_pdf =</span> 'pdflatex <span class="variable">--synctex=</span>-<span class="number">1</span> -src-specials <span class="variable">-interaction=</span>nonstopmode $*'</div><div class="line"><span class="string">" let g:Tex_CompileRule_pdf = 'xelatex --synctex=-1 -src-specials -interaction=nonstopmode $*'</span></div><div class="line">" 设置多次编译 以包含参考文献</div><div class="line"><span class="keyword">let</span> g:<span class="variable">Tex_MultipleCompileFormats =</span> 'dvi,pdf'</div><div class="line"><span class="string">" 自动换行设置</span></div><div class="line">let g:tex_indent_items=0</div><div class="line">" 不进行符号的转义显示</div><div class="line"><span class="keyword">let</span> g:<span class="variable">tex_conceal=</span><span class="string">''</span></div><div class="line">" TIP: if you write your \label's as \label{fig:something}, then if you type in \ref{fig: and press &lt;C-n&gt; you will automatically cycle through all the figure labels. Very useful!</div><div class="line">set iskeyword+=:</div><div class="line">" 禁用宏</div><div class="line">" let g:Imap_FreezeImap=1</div><div class="line">" &lt;F2&gt;编译</div><div class="line">autocmd FileType tex nmap &lt;F2&gt; \ll|imap &lt;F2&gt; &lt;ESC&gt;:w&lt;CR&gt;\ll|vmap &lt;F2&gt; &lt;ESC&gt;:w&lt;CR&gt;\ll</div><div class="line">" &lt;F3&gt;查看</div><div class="line">autocmd FileType tex nmap &lt;F3&gt; &lt;ESC&gt;\lv|imap &lt;F3&gt; &lt;ESC&gt;\lv|vmap &lt;F3&gt; &lt;ESC&gt;\lv</div><div class="line">" &lt;C-b&gt; 黑体</div><div class="line">autocmd FileType tex imap &lt;C-B&gt; bf&lt;Tab&gt;</div><div class="line">" 自动补全neocomplcache</div><div class="line">autocmd FileType tex let g:neocomplcache_enable_at_startup = 1</div><div class="line">" 自动补全字典设置</div><div class="line">autocmd FileType tex setlocal dictionary+=D:\Vim\vimfiles\dict\english.dict</div><div class="line">autocmd FileType tex setlocal complete+=k</div></pre></td></tr></table></figure>
-
-<h2 id="VIM_插件推荐">VIM 插件推荐</h2>
-<p>为了完善VIM的功能，我们将介绍几个插件，包括Ctags, WinManager, pathogen, EasyMotion, Tabular。</p>
-<h2 id="使用方法">使用方法</h2>
-<h2 id="完善你的编辑器">完善你的编辑器</h2>
+<h2 id="信号的等效基带表示方法">信号的等效基带表示方法</h2>
+<p>对于载频为 \(f_c\) 的实值窄带通带信号 \(s\left(t\right)\)，其频谱 \(S\left(f\right)\) 满足共轭对称性 \(S\left(f\right)=S^H\left(-f\right)\)，所以我们只需要一半的频谱分量便可以得到信号的所有信息，取正频率（\(f\geq 0\)）处的频谱，并将其表示为如下形式<br>$$<br>S^{+}\left(f\right)=2\mu\left(f\right)S\left(f\right),<br>$$<br>其中阶跃函数 \(\mu\left(f\right)\) 的定义为<br>$$<br>\mu\left(f\right)=<br>\begin{cases}<br>1, &amp; f\geq 0 \\<br>0, &amp; f&lt;0<br>\end{cases},<br>$$<br>将该带限通带信号的频谱 \(S^+\left(f\right)\) 搬移到基带，我们便可以定义基带信号频谱为<br>$$<br>S_B\left(f\right)= S^+\left(f+f_c\right),<br>$$<br>由于在整个频谱搬移过程中，没有丢失信息, 所以原始的带通信号 \(s\left(t\right)\) 可以等价的用频谱为 \(S_B\left(f\right)\)的低通信号表示, 这就是所谓的信号的<strong>等效基带表示</strong>, 该等效基带信号的时域形式可以通过逆傅里叶变换得到<br>$$<br>s_B\left(t\right) =\mathcal{F}^{-1}\left\{S_B\left(f\right)\right\}=\int  S^+\left(f\right)e^{j2\pi ft}e^{-j2\pi f_c t} df<br>$$<br>经过化简可以得到信号的时域等效基带表示为<br>$$<br>s_B\left(t\right) = \left(s\left(t\right)+j\frac{1}{\pi t}*s\left(t\right)\right) e^{-j2\pi f_c t},<br>$$<br>其中 \(*\) 表示卷积运算, 所示原始通带信号与其等效基带表示存在如下关系<br>$$<br>s\left(t\right)=\mathcal{Re}\left\{s_B\left(t\right)e^{j2\pi f_c t}\right\}.<br>$$</p>
+<h2 id="信道的等效基带表示">信道的等效基带表示</h2>
+<p>与信号的等效基带表示类似, 信道的冲击响应 \( h\left(t\right)\) 也存在其等效基带的表示方法, 由于 \(h\left(t\right)\) 为实信号, 所以其频谱满足共轭对称性<br>$$<br>H\left(f\right)=H^H\left(-f\right),<br>$$<br>取信号频谱的正频率部分 \(H^+\left(f\right) =\mu\left(f\right) H\left(f\right) \), 并对其做频谱搬移, 定义其基带频谱为<br>$$<br>H_B\left(f\right) = H^+\left(f+f_c\right)<br>$$<br>所以信道的等效基带表示的时域形式为<br>$$<br>h_B\left(t\right) =\mathcal{F}^{-1}\left\{H_B\left(f\right)\right\}=\int  H^+\left(f\right)e^{j2\pi ft}e^{-j2\pi f_c t} df<br>$$<br>经过化简可以得到信道的时域等效基带表示为<br>$$<br>h_B\left(t\right) = \frac{1}{2}\left(h\left(t\right)+j\frac{1}{\pi t}*h\left(t\right)\right) e^{-j2\pi f_c t},<br>$$<br>所示原始通带信号与其等效基带表示存在如下关系<br>$$<br>h\left(t\right)=2\mathcal{Re}\left\{h_B\left(t\right)e^{j2\pi f_c t}\right\}.<br>$$</p>
+<h2 id="通过信道后信号的等效基带表示">通过信道后信号的等效基带表示</h2>
+<p>在上面两个小节中我们已经知道了对于通带信号以及信道都存在与之一一对应的等效基带表示, 所示信号通过信道后得到的实信号 \(r\left(t\right)\) 也存在与之对应的等效基带表示\(r_B\left(t\right)\), 其中输出信号可以为卷积形式<br>$$<br>r\left(t\right) = \int s\left(\tau\right) h\left(t-\tau\right) d\tau,<br>$$<br>其相应的频域形式为<br>$$<br>R\left(f\right) = S\left(f\right)H\left(f\right).<br>$$</p>
+<p>由于 \(S\left(f\right)=\frac{1}{2}S^+\left(f\right)+\frac{1}{2}[S^+\left(-f\right)]^H\), \(H\left(f\right)=H^+\left(f\right)+[H^+\left(-f\right)]^H\), 所以我们有<br>$$<br>\begin{align}<br>R\left(f\right) &amp; =  S\left(f\right)H\left(f\right)=\frac{1}{2}S^+\left(f\right)H^+\left(f\right)+\frac{1}{2}S^+\left(f\right)[H^+\left(-f\right)]^H\\<br>&amp;+\frac{1}{2}[S^+\left(-f\right)]^HH^+\left(f\right)+\frac{1}{2}[S^+\left(-f\right)]^H[H^+\left(-f\right)]^H \\<br>&amp; = \frac{1}{2}S^+\left(f\right)H^+\left(f\right)+\frac{1}{2}[S^+\left(-f\right)]^H[H^+\left(-f\right)]^H\\<br>&amp; = \frac{1}{2}S_B\left(f-f_c\right)H_B\left(f-f_c\right)+\frac{1}{2}[S_B\left(f_c-f\right)]^H[H_B\left(f_c-f\right)]^H.<br>\end{align}<br>$$<br>定义 \(R_B\left(f\right)=S_B\left(f\right)H_B\left(f\right)\), 所以上式可以重写为<br>$$<br>R\left(f\right) = \frac{1}{2}R_B\left(f-f_c\right)+\frac{1}{2}R^H_B\left(f_c-f\right).<br>$$<br>同时对等式两边做傅里叶逆变换, 我们有<br>$$<br>r\left(t\right) = \frac{1}{2}[r_B\left(t\right)+r^H_B\left(t\right)]e^{j2\pi f_c t},<br>$$<br>其中 \(r_B\left(t\right)=\int R_B\left(f\right)e^{j2\pi ft} df \), 并且输出信号与其等效基带表示满足如下关系<br>$$<br>r\left(t\right)=\mathcal{Re}\left\{r_B\left(t\right)e^{j2\pi f_c t}\right\}.<br>$$</p>
 <hr>
 <p>版权所有，转载请注明出处 <a href="http://chenpengdsp.com" target="_blank" rel="external">Peng的博客</a>（<a href="http://chenpengdsp.com" target="_blank" rel="external">http://chenpengdsp.com</a> ）。</p>
   
@@ -123,13 +111,13 @@ LATEX 语言支持
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/LATEX/">LATEX</a>
+  <a class="article-category-link" href="/categories/信号处理/">信号处理</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/latex/">latex</a><a href="/tags/vim/">vim</a>
+  <span></span> <a href="/tags/带通/">带通</a><a href="/tags/等效基带表示/">等效基带表示</a>
   </div>
 
 </div>
@@ -137,7 +125,7 @@ LATEX 语言支持
 
 <div class="article-share" id="share">
 
-  <div data-url="http://chenpengdsp.com/2014/11/18/2014_11_18_04_LATEX_VIM/" data-title="使用 VIM 优雅地书写 LATEX 文档 | Peng 的博客" data-tsina="1917001683" class="share clearfix">
+  <div data-url="http://chenpengdsp.com/2014/11/29/test/" data-title="TEST | Peng 的博客" data-tsina="1917001683" class="share clearfix">
   </div>
 
 </div>
@@ -146,19 +134,11 @@ LATEX 语言支持
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/11/18/2014_11_18_01_MATLAB_VIM_1/" title="使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用">
-  <strong>上一篇：</strong><br/>
-  <span>
-  使用 VIM 优雅地书写 MATLAB 代码（1）-- VIM 安装与使用</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/11/18/2014_11_17_01_hello_world/"  title="Hello World">
+<a href="/2014/11/29/2014_11_29_01_Bandpass_and_Lowpass/"  title="信号的带通与等效基带表示">
  <strong>下一篇：</strong><br/> 
- <span>Hello World
+ <span>信号的带通与等效基带表示
 </span>
 </a>
 </div>
@@ -183,7 +163,7 @@ LATEX 语言支持
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LATEX_语言支持"><span class="toc-number">2.</span> <span class="toc-text">LATEX 语言支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VIM_插件推荐"><span class="toc-number">3.</span> <span class="toc-text">VIM 插件推荐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用方法"><span class="toc-number">4.</span> <span class="toc-text">使用方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#完善你的编辑器"><span class="toc-number">5.</span> <span class="toc-text">完善你的编辑器</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#信号的等效基带表示方法"><span class="toc-number">1.</span> <span class="toc-text">信号的等效基带表示方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#信道的等效基带表示"><span class="toc-number">2.</span> <span class="toc-text">信道的等效基带表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通过信道后信号的等效基带表示"><span class="toc-number">3.</span> <span class="toc-text">通过信道后信号的等效基带表示</span></a></li></ol>
  
   </div>
 
